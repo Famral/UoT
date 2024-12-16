@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Color Palette Generator - Online Color Plette Generator</title>
+    <meta name="description"
+    content="The best color palettes generator! Create the perfect palette or get inspired by thousands of beautiful color schemes.">
+  <meta name="keywords"
+    content="The best color palettes generator! Create the perfect palette or get inspired by thousands of beautiful color schemes.">
+  <link rel="icon" type="image/x-icon" href="https://tools.famral.com/favicon.png" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+        }
+        .color-box {
+            width: 120px;
+            height: 120px;
+            margin: 10px;
+            display: inline-block;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .palette {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        button {
+            background-color: #2f40ff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #002ae7;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Color Palette Generator</h2>
+    <div id="palette" class="palette"></div>
+    <button onclick="generatePalette()">Generate Palette</button>
+</div>
+
+<script>
+    function generatePalette() {
+        const palette = document.getElementById('palette');
+        palette.innerHTML = '';
+        for (let i = 0; i < 5; i++) {
+            const color = getRandomColor();
+            const colorBox = document.createElement('div');
+            colorBox.className = 'color-box';
+            colorBox.style.backgroundColor = color;
+            colorBox.innerHTML = `<p>${color}</p>`;
+            colorBox.style.color = getContrastingColor(color);
+            palette.appendChild(colorBox);
+        }
+    }
+
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    function getContrastingColor(color) {
+        const r = parseInt(color.substr(1, 2), 16);
+        const g = parseInt(color.substr(3, 2), 16);
+        const b = parseInt(color.substr(5, 2), 16);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        return brightness > 125 ? '#000' : '#FFF';
+    }
+
+    generatePalette(); // Generate a palette on initial load
+</script>
+
+</body>
+</html>

@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>CSS Gradient Generator | Beautiful CSS Gradient Generator | CSS Generater Tool</title>
+  <meta name="description"
+    content="Create stunning CSS gradients effortlessly with our innovative CSS Gradient Generator. Design eye-catching backgrounds and elements for your website with ease. Try it now!">
+  <meta name="keywords" content="CSS Gradient Generator, Beautiful CSS Gradient Generator">
+  <link rel="icon" type="image/x-icon" href="https://tools.famral.com/favicon.png" />
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'><link rel="stylesheet" href="https://tools.famral.com/style.css">
+
+
+  <script type="text/javascript"
+    src="https://platform-api.sharethis.com/js/sharethis.js#property=6531636a1ce419001afe7464&product=inline-share-buttons&source=platform"
+    async="async"></script>
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <div class="menu-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#272727"
+            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">&lt;!--! Famral Icons Free 1.00 by License -
+            https://www.famral.com/ (Icons: CC BY 4.0) Copyright 2021 Famral Icons --&gt;<line x1="5.99" y1="6" x2="6"
+                y2="6" stroke-linecap="round" stroke-width="4"></line>
+            <line x1="11.99" y1="6" x2="12" y2="6" stroke-linecap="round" stroke-width="4"></line>
+            <line x1="17.99" y1="6" x2="18" y2="6" stroke-linecap="round" stroke-width="4"></line>
+            <line x1="5.99" y1="12" x2="6" y2="12" stroke-linecap="round" stroke-width="4"></line>
+            <line x1="11.99" y1="12" x2="12" y2="12" stroke-linecap="round" stroke-width="4"></line>
+            <line x1="17.99" y1="12" x2="18" y2="12" stroke-linecap="round" stroke-width="4"></line>
+            <line x1="5.99" y1="18" x2="6" y2="18" stroke-linecap="round" stroke-width="4"></line>
+            <line x1="11.99" y1="18" x2="12" y2="18" stroke-linecap="round" stroke-width="4"></line>
+            <line x1="17.99" y1="18" x2="18" y2="18" stroke-linecap="round" stroke-width="4"></line>
+        </svg>
+    </div>
+
+    <div class="container">
+        <!-- Nav -->
+        <nav class="main-nav">
+            <img src="https://tools.famral.com/logo.png" alt="Famral Tools" class="logo">
+
+            <ul class="main-menu">
+                <li><a href="https://tools.famral.com">Home</a></li>
+                <li><a href="https://tools.famral.com/qr-code-generator" target="_blank">QR Code</a></li>
+                <li><a href="https://www.famral.com/domains" target="_blank">Buy Domains</a></li>
+                <li><a href="https://tools.sciencebaba.com/" target="_blank">Developer Tools</a></li>
+            </ul>
+
+            <ul class="right-menu">
+                <li>
+                    <a href="https://tools.famral.com/search">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none"
+                            stroke="#000000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">&lt;!--!
+                            Famral Icons -
+                            https://icons.famral.com/ (Copyright Famral Icons) --&gt;<circle cx="11"
+                                cy="11" r="9" fill="none"></circle>
+                            <line x1="17.5" y1="17.5" x2="22" y2="22"></line>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin-top: 0px;
+        padding: 0;
+        background-color: #ffffff;
+      }
+
+      #gradient-box {
+        background: linear-gradient(to right, #3e3180, #dd9bba);
+        width: 100%;
+        max-width: 550px;
+        height: 700px;
+        border-radius: 10px;
+        border-style: solid;
+        border-color: rgb(224, 224, 224);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+      }
+
+      h1 {
+        color: #fff;
+        margin: 0 0 20px;
+      }
+
+      input[type="color"] {
+        width: 100%;
+        margin: 10px 0;
+        padding: 1px;
+      }
+
+      select {
+        width: 100%;
+        margin: 10px 0;
+        padding: 3px;
+      }
+
+      button {
+        background-color: #007BFF;
+        color: white;
+        border: 1px solid rgb(141, 141, 255);
+        padding: 8px 15px;
+        cursor: pointer;
+        margin: 8px 0;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      #css-code {
+        background-color: #fff;
+        padding: 10px;
+        border: 2px solid #ccc;
+        width: 100%;
+        white-space: pre-wrap;
+        display: none;
+      }
+
+      textarea {
+        width: 100%;
+        height: 100px;
+
+      }
+
+      #button-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fafafa;
+        border: 1px solid #e9e9e9;
+        border-radius: 5px;
+      }
+
+      .faq {
+        margin: 20px 0;
+      }
+
+      .question {
+        cursor: pointer;
+        font-weight: bold;
+        color: #007BFF;
+      }
+
+      .answer {
+        display: none;
+        margin: 10px 0;
+        color: #333;
+      }
+
+      .question::before {
+        content: "➕";
+        margin-right: 10px;
+      }
+
+      .open::before {
+        content: "➖";
+      }
+    </style>
+    </head>
+
+    <body>
+
+
+      <br>
+
+      <div id="gradient-box">
+        <h1>CSS Gradient Generator</h1>
+        <input type="color" id="color1" value="#ff5733" onchange="updateGradient()">
+        <input type="color" id="color2" value="#6e2c00" onchange="updateGradient()">
+        <select id="direction" onchange="updateGradient()">
+          <option value="to right">Left to Right</option>
+          <option value="to left">Right to Left</option>
+          <option value="to bottom">Top to Bottom</option>
+          <option value="to top">Bottom to Top</option>
+          <option value="to bottom right">Top-Left to Bottom-Right</option>
+          <option value="to bottom left">Top-Right to Bottom-Left</option>
+          <option value="to top right">Bottom-Left to Top-Right</option>
+          <option value="to top left">Bottom-Right to Top-Left</option>
+        </select>
+        <button onclick="generateGradient()">Generate CSS</button>
+        <button onclick="generateRandomGradient()">Generate Random Gradient</button>
+        <div id="css-code">
+          <textarea id="css-preview" readonly></textarea>
+          <div id="button-box">
+            <button id="copyButton" onclick="copyToClipboard()">Copy CSS Gradient</button>
+          </div>
+        </div>
+      </div>
+
+      <br>
+      <br>
+
+      <div class="faq-container">
+        <div class="faq">
+          <div class="question">How do I use the CSS Gradient Generator?</div>
+          <div class="answer">To use the <a href="https://tools.famral.com/css-gradient-generator" target="_self">CSS
+              Gradient Generator</a>, select your desired colors for the gradient using the color pickers. You can also
+            choose the direction of the gradient. Click the "Generate CSS" button to generate the CSS code for your
+            gradient. You can then copy the CSS code to use in your projects.</div>
+        </div>
+
+        <div class="faq">
+          <div class="question">What are the available gradient directions?</div>
+          <div class="answer">You can choose from a variety of gradient directions, such as left to right, right to
+            left, top to bottom, bottom to top, top-left to bottom-right, top-right to bottom-left, bottom-left to
+            top-right, and bottom-right to top-left. These options allow you to create gradients that suit your design
+            needs.</div>
+        </div>
+
+        <div class="faq">
+          <div class="question">Is there a way to generate a random gradient?</div>
+          <div class="answer">Yes, our tool provides a "Generate Random Gradient" button. Clicking this button will
+            generate a random gradient with random colors and a random direction. It's a fun way to explore different
+            gradient possibilities and spark your creativity.</div>
+        </div>
+
+        <div class="faq">
+          <div class="question">How do I copy the CSS code for my gradient?</div>
+          <div class="answer">After generating your desired gradient, the CSS code will appear in the text area. Simply
+            click the "Copy CSS Gradient" button, and the CSS code will be copied to your clipboard. You can then paste
+            it into your CSS file or HTML code for immediate use.</div>
+        </div>
+      </div>
+
+
+
+      <script>
+        function updateGradient() {
+          const color1 = document.getElementById('color1').value;
+          const color2 = document.getElementById('color2').value;
+          const direction = document.getElementById('direction').value;
+          const gradientBox = document.getElementById('gradient-box');
+          gradientBox.style.background = `linear-gradient(${direction}, ${color1}, ${color2})`;
+        }
+
+        function generateGradient() {
+          const color1 = document.getElementById('color1').value;
+          const color2 = document.getElementById('color2').value;
+          const direction = document.getElementById('direction').value;
+          const cssCode = `background: linear-gradient(${direction}, ${color1}, ${color2});`;
+          const cssCodeElement = document.getElementById('css-code');
+          const cssPreview = document.getElementById('css-preview');
+          cssCodeElement.style.display = 'block';
+          cssPreview.value = cssCode;
+        }
+
+        function generateRandomGradient() {
+          const randomColor1 = getRandomColor();
+          const randomColor2 = getRandomColor();
+          const randomDirection = getRandomDirection();
+          document.getElementById('color1').value = randomColor1;
+          document.getElementById('color2').value = randomColor2;
+          document.getElementById('direction').value = randomDirection;
+          updateGradient();
+          generateGradient();
+        }
+
+        function copyToClipboard() {
+          const cssPreview = document.getElementById('css-preview');
+          cssPreview.select();
+          document.execCommand('copy');
+          alert('CSS Gradient code copied to clipboard');
+        }
+
+        function getRandomColor() {
+          return '#' + Math.floor(Math.random() * 16777215).toString(16);
+        }
+
+        function getRandomDirection() {
+          const directions = [
+            'to right', 'to left', 'to bottom', 'to top',
+            'to bottom right', 'to bottom left', 'to top right', 'to top left'
+          ];
+          const randomIndex = Math.floor(Math.random() * directions.length);
+          return directions[randomIndex];
+        }
+      </script>
+
+
+
+      <script>
+        // FAQ - Add event listeners to toggle the answers
+        const questions = document.querySelectorAll('.question');
+        questions.forEach(question => {
+          const answer = question.nextElementSibling;
+          answer.style.display = 'block'; // Open the answers by default
+          question.classList.add('open');
+          question.addEventListener('click', () => {
+            answer.style.display = (answer.style.display === 'block') ? 'none' : 'block';
+            question.classList.toggle('open');
+          });
+        });
+      </script>
+
+      <br>
+      <div class="sharethis-inline-share-buttons"></div>
+
+      <br>
+      <br>
+
+
+  </div>
+  
+ <!-- Main-Common-Footer-Links -->
+  <section class="links">
+    <div class="links-inner">
+      <ul>
+        <li><a href="https://tools.famral.com/css-background-generator" target="_blank">CSS Background Generator</a></li>
+      </ul>
+      <ul>
+        <li><a href="https://tools.famral.com/html-link-generator" target="_blank">HTML Hyperlink Generator</a></li>
+      </ul>
+      <ul>
+        <li><a href="https://tools.famral.com/password-generator" target="_blank">Strong Password Generator</a></li>
+      </ul>
+      <ul>
+        <li><a href="https://tools.famral.com/css-gradient-generator" target="_blank">CSS Gradient Generator</a></li>
+      </ul>
+      <ul>
+        <li><a href="https://tools.famral.com/keyword-density-checker" target="_blank">Check Keyword Density</a></li>
+      </ul>
+      <ul>
+        <li><a href="https://tools.famral.com/utm-generator" target="_blank">Free UTM Builder</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Main-Common-Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <ul>
+                <li><a href="https://tools.famral.com/">Copyright © Famral. All rights reserved.</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Main-Common-JS partial -->
+  <script>document.querySelector('.menu-btn').addEventListener('click', () => document.querySelector('.main-menu').classList.toggle('show'));</script>
+
+</body>
+
+</html>
