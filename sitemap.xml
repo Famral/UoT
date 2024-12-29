@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+
+<url>
+  <loc>https://www.useoftools.com/</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/developer-tools</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/qr-code-generator</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/search</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/css-background-generator</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/html-link-generator</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/password-generator</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/password-strength-checker</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/utm-generator</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/css-gradient-generator</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/keyword-density-checker</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/svg-editor</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/color-palette-generator</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/crc16.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/crc16_checksum.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/crc32.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/crc32_checksum.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/md2.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/md2_file_hash.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/md4.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/md4_file_hash.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/md5.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/md5_checksum.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/sha1.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/sha1_checksum.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/sha224.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/sha224_checksum.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/sha256.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/sha256_checksum.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/double_sha256.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/sha384.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/sha384_file_hash.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/sha512.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/sha512_file_hash.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/sha512_224.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/sha512_224_file_hash.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/sha512_256.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/sha512_256_file_hash.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/sha3_224.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/sha3_224_checksum.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/sha3_256.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/sha3_256_checksum.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/sha3_384.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/sha3_384_checksum.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/sha3_512.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/sha3_512_checksum.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/keccak_224.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/keccak_224_checksum.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/keccak_256.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/keccak_256_checksum.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/keccak_384.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/keccak_384_checksum.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/keccak_512.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/keccak_512_checksum.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/shake_128.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/shake_128_checksum.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/shake_256.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/shake_256_checksum.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/cshake128.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/cshake128_file_hash.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/cshake256.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/cshake256_file_hash.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/kmac128.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/kmac128_file_hash.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/kmac256.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/kmac256_file_hash.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/ripemd_128.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/ripemd_128_checksum.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/ripemd_160.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/ripemd_160_checksum.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/ripemd_256.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/ripemd_256_checksum.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/ripemd_320.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/ripemd_320_checksum.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/base32_encode.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/base32_decode.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/base32_encode_file.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/base32_decode_file.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/base58_encode.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/base58_decode.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/base58_encode_file.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/base58_decode_file.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/base64_encode.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/base64_decode.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/base64_encode_file.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/base64_decode_file.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/html_encode.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/html_decode.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/url_encode.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/url_decode.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.useoftools.com/syntax_highlight.html</loc>
+  <lastmod>2024-12-29T10:16:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
