@@ -193,6 +193,7 @@ body{
 
   .btn3{
     background-color: rgb(7, 0, 48);
+    width: 100%;
     padding: 10px 495px;
     outline: none;
     border: none;
@@ -212,6 +213,7 @@ body{
 
   .btn4{
     background-color: rgb(54, 54, 54);
+    width: 100%;
     padding: 10px 510px;
     outline: none;
     border: none;
