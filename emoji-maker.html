@@ -238,9 +238,9 @@
             </div>
             <div class="emoji-container">
                 <div class="emoji">
-                    <img src="./images/eye-4.svg" class="eyes" />
-                    <img src="./images/eyebrow-3.svg" class="eyebrows" />
-                    <img src="./images/mouth-4.svg" class="mouth" />
+                    <img src="./eye-4.svg" class="eyes" />
+                    <img src="./eyebrow-3.svg" class="eyebrows" />
+                    <img src="./mouth-4.svg" class="mouth" />
                 </div>
             </div>
             </div>
@@ -281,17 +281,17 @@
             });
 
             eyesBtn.addEventListener("click", () => {
-                eyes.setAttribute("src", `./images/eye-${counter2}.svg`);
+                eyes.setAttribute("src", `./eye-${counter2}.svg`);
                 counter2 = counter2 < totalCounts.eyeCount - 1 ? counter2 + 1 : 0;
             });
 
             eyebrowsBtn.addEventListener("click", () => {
-                eyebrows.setAttribute("src", `./images/eyebrow-${counter3}.svg`);
+                eyebrows.setAttribute("src", `./eyebrow-${counter3}.svg`);
                 counter3 = counter3 < totalCounts.eyebrowsCount - 1 ? counter3 + 1 : 0;
             });
 
             mouthBtn.addEventListener("click", () => {
-                mouth.setAttribute("src", `./images/mouth-${counter4}.svg`);
+                mouth.setAttribute("src", `./mouth-${counter4}.svg`);
                 counter4 = counter4 < totalCounts.mouthCount - 1 ? counter4 + 1 : 0;
             });
         </script>
