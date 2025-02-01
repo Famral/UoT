@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Convert images to PDF for free online. Our JPG to PDF Converter transforms any image file into a custom PDF file in seconds.">
+    <link rel="icon" type="image/x-icon" href="https://www.useoftools.com/favicon.png" />
+    <title>Image to PDF Converter | Convert Images to PDF online</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9724513291347385"
+        crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .upload-section {
+            margin-bottom: 1.5rem;
+        }
+
+        input[type="file"] {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .preview-section {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .preview-section img {
+            margin: 0.5rem;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .download-section {
+            margin-top: 1.5rem;
+        }
+
+        .download-section a {
+            text-decoration: none;
+            background-color: #28a745;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-section a:hover {
+            background-color: #218838;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 14px 50px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .logo-menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 15px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            padding: 5px 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu a:hover {
+            background-color: #f5f5f5;
+            border-radius: 10px;
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+        }
+
+        .search img {
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .search img:hover {
+            opacity: 0.7;
+        }
+
+        @media (max-width: 600px) {
+            .menu {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+                cursor: pointer;
+                font-size: 18px;
+            }
+
+            .menu.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                padding: 10px 0;
+                z-index: 999;
+            }
+
+            .menu a {
+                padding: 10px 20px;
+                border-bottom: 1px solid #f0f0f0;
+            }
+
+            .menu a:last-child {
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo-menu">
+            <div class="logo">
+                <img src="./logo.png" alt="Online Tools">
+                <span></span>
+                </a>
+            </div>
+            <div class="menu">
+                <a href="https://www.useoftools.com">All Tools</a>
+                <a href="https://www.useoftools.com/add-text-to-photo">Add Text to Photo</a>
+                <a href="https://www.useoftools.com/svg-editor">SVG Editor</a>
+            </div>
+        </div>
+        <div class="search">
+            <a href="https://www.useoftools.com/search" target="_blank" title="Search">
+                <img src="./search.svg" alt="Search" style="width: 20px; height: 20px;">
+            </a>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <h1>Image to PDF Converter</h1>
+            <div class="upload-section">
+                <input type="file" id="imageUpload" multiple accept="image/*">
+                <button id="convertBtn">Convert to PDF</button>
+            </div>
+            <div class="preview-section" id="previewSection"></div>
+            <div class="download-section" id="downloadSection"></div>
+        </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script>
+        document.getElementById('imageUpload').addEventListener('change', previewImages);
+        document.getElementById('convertBtn').addEventListener('click', convertToPDF);
+
+        function previewImages() {
+            const previewSection = document.getElementById('previewSection');
+            previewSection.innerHTML = ''; // Clear previous previews
+            const files = document.getElementById('imageUpload').files;
+
+            Array.from(files).forEach(file => {
+                const imgElement = document.createElement('img');
+                imgElement.src = URL.createObjectURL(file);
+                previewSection.appendChild(imgElement);
+            });
+        }
+
+        function convertToPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const files = document.getElementById('imageUpload').files;
+
+            if (files.length === 0) {
+                alert("Please upload some images first.");
+                return;
+            }
+
+            Array.from(files).forEach((file, index) => {
+                const img = new Image();
+                img.src = URL.createObjectURL(file);
+                img.onload = () => {
+                    doc.addImage(img, 'JPEG', 10, 10, 180, 160);
+                    if (index < files.length - 1) {
+                        doc.addPage();
+                    }
+                    if (index === files.length - 1) {
+                        const downloadSection = document.getElementById('downloadSection');
+                        const downloadLink = document.createElement('a');
+                        downloadLink.href = doc.output('bloburl');
+                        downloadLink.download = 'images.pdf';
+                        downloadLink.textContent = 'Download PDF';
+                        downloadSection.innerHTML = '';
+                        downloadSection.appendChild(downloadLink);
+                    }
+                };
+            });
+        }
+    </script>
+</body>
+
+</html>
