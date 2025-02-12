@@ -5,7 +5,7 @@ let imageURL;
         const formData=new FormData();
         formData.append("image_file",image);
         formData.append('size','auto')
-        const apiKey="MfVSuLGjgmv8va3FBygBP1KN"
+        const apiKey="72W3AXTie7cgHHwns6hYgZcv"
         fetch('https://api.remove.bg/v1.0/removebg',{
             method: 'POST',
             headers:{
