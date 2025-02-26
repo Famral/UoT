@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Our PNG to JPEG converter is fast, free, and easy to use. Simply Upload your PNG file, and then instantly download your converted JPEG file">
+    <link rel="icon" type="image/x-icon" href="https://www.useoftools.com/favicon.png" />
+    <title>PNG to JPEG Converter | Convert PNG to JPEG Online for Free</title>
+    <meta property="og:image" content="https://www.useoftools.com/image-converter.png" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9724513291347385"
+        crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: #f7f7f7;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 14px 50px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .logo-menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 15px;
+        }
+
+        .menu a { text-decoration: none; color: #ffffff;
+            font-size: 16px;
+            padding: 5px 10px;
+            transition: color 0.3s ease;
+        }
+
+        .menu a:hover {
+            color: #e0e0e0;
+        }
+
+        .search img {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+            margin: 100px auto;
+        }
+
+        h2 {
+            color: #202020;
+            margin-bottom: 30px;
+            font-size: 1.8em;
+        }
+
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        input,
+        button {
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 1.1em;
+        }
+
+        input {
+            border: 2px solid #007bff;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0068d6;
+        }
+
+        #output {
+            margin-top: 30px;
+        }
+
+        a { display: block; background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 15px;
+            font-size: 1.1em;
+        }
+
+        a:hover {
+            background-color: #009a24;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo-menu">
+            <div class="logo">
+                <img src="./logo.png" alt="UseOfTools">
+            </div>
+            <div class="menu">
+                <a href="https://www.useoftools.com">All Tools</a>
+                <a href="https://www.useoftools.com/png-to-pdf">PNG to PDF</a>
+                <a href="https://www.useoftools.com/svg-editor">SVG Editor</a>
+            </div>
+        </div>
+        <div class="search">
+            <a href="https://www.useoftools.com/search" target="_blank" title="Search">
+                <img src="./search.svg" alt="Search">
+            </a>
+        </div>
+    </nav>
+    <div class="container">
+        <h2>PNG to JPEG Converter</h2>
+        <div class="input-container">
+            <input type="file" id="fileInput" accept="image/png">
+            <button onclick="convertImage()">Convert to JPEG</button>
+        </div>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        function convertImage() {
+            const input = document.getElementById('fileInput').files[0];
+            if (!input) {
+                alert('Please select a PNG file first.');
+                return;
+            }
+
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+
+            img.onload = function () {
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+
+                const jpegDataUrl = canvas.toDataURL('image/jpeg', 0.95);
+                const link = document.createElement('a');
+                link.href = jpegDataUrl;
+                link.download = 'useoftools-com.jpeg';
+                link.innerText = 'Download JPEG';
+                link.style.display = 'block';
+
+                document.getElementById('output').innerHTML = '';
+                document.getElementById('output').appendChild(link);
+            };
+
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                img.src = event.target.result;
+            };
+            reader.readAsDataURL(input);
+        }
+    </script>
+</body>
+
+</html>
