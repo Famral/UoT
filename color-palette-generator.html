@@ -4,21 +4,51 @@
     <title>Color Palette Generator - Online Color Plette Generator</title>
     <meta name="description"
     content="The best color palettes generator! Create the perfect palette or get inspired by thousands of beautiful color schemes.">
-  <meta name="keywords"
+    <meta name="keywords"
     content="The best color palettes generator! Create the perfect palette or get inspired by thousands of beautiful color schemes.">
-  <link rel="icon" type="image/x-icon" href="https://tools.famral.com/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="https://www.useoftools.com/favicon.png" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9724513291347385"
      crossorigin="anonymous"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
+            padding: 0;
         }
+
+        /* Nav Styles */
+        .navbar {
+            background-color: #2f40ff;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Content Styles */
         .container {
             background: white;
             padding: 20px;
@@ -27,7 +57,9 @@
             width: 90%;
             max-width: 800px;
             text-align: center;
+            margin: 100px auto 0 auto;
         }
+
         .color-box {
             width: 120px;
             height: 120px;
@@ -36,11 +68,13 @@
             border-radius: 10px;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         }
+
         .palette {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
         }
+
         button {
             background-color: #2f40ff;
             color: white;
@@ -50,6 +84,7 @@
             cursor: pointer;
             margin: 10px;
         }
+
         button:hover {
             background-color: #002ae7;
         }
@@ -57,6 +92,18 @@
 </head>
 <body>
 
+<!-- Navigation Bar -->
+<div class="navbar">
+    <h1>UseOfTools</h1>
+    <div class="nav-links">
+        <a href="https://www.useoftools.com/">Home</a>
+        <a href="https://www.useoftools.com/hex-color-generator">HEX Color Generator</a>
+        <a href="https://www.useoftools.com/hex-to-rgb">HEX to RGB Converter</a>
+        <a href="https://www.useoftools.com/search">Search</a>
+    </div>
+</div>
+
+<!-- Main Content -->
 <div class="container">
     <h2>Color Palette Generator</h2>
     <div id="palette" class="palette"></div>
