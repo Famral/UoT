@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://www.useoftools.com/favicon.png" />
+    <meta name="description"
+        content="Crop images online effortlessly with our free Image Cropper tool. Resize, edit, and enhance your photos with ease. Try it now!">
+    <meta name="keywords"
+        content="Image Cropper, Crop Image Online, Online Image Cropper Tool, Free Image Cropper, Image Resizer, Crop Image Tool, Image Editing Tool, Online Image Editor, Crop Photo Online, Resize Image Online">
+    <meta name="author" content="UseOfTools">
+    <title>Crop Image Online | Online Image Cropper Tool For Free</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9724513291347385"
+        crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --primary-color: #2379e9;
+            --secondary-color: #00bd5e;
+            --dark-color: #2c3e50;
+        }
+
+        .navbar {
+            background-color: rgb(255, 255, 255);
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: rgb(0, 33, 124);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-link {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: rgb(242, 247, 255);
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            padding-top: 100px;
+            /* Increased from 80px */
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 10px auto;
+            /* Added top and bottom margin */
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--dark-color);
+            margin-bottom: 30px;
+        }
+
+        .upload-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .upload-btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .upload-btn:hover {
+            background: rgb(0, 96, 185);
+        }
+
+        .crop-container {
+            position: relative;
+            height: 500px;
+            width: fit-content;
+            margin: 0 auto;
+            display: none;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .crop-area {
+            position: absolute;
+            border: 2px solid var(--secondary-color);
+            background: rgba(255, 255, 255, 0.1);
+            cursor: move;
+            box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5);
+        }
+
+        .resize-handle {
+            width: 12px;
+            height: 12px;
+            background: white;
+            border: 2px solid var(--secondary-color);
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        /* Original handle positions */
+        .handle-nw {
+            top: -6px;
+            left: -6px;
+            cursor: nw-resize;
+        }
+
+        .handle-ne {
+            top: -6px;
+            right: -6px;
+            cursor: ne-resize;
+        }
+
+        .handle-sw {
+            bottom: -6px;
+            left: -6px;
+            cursor: sw-resize;
+        }
+
+        .handle-se {
+            bottom: -6px;
+            right: -6px;
+            cursor: se-resize;
+        }
+
+        .handle-n {
+            top: 0;
+            left: 50%;
+            cursor: n-resize;
+        }
+
+        .handle-s {
+            bottom: 0;
+            left: 50%;
+            cursor: s-resize;
+        }
+
+        .handle-e {
+            top: 50%;
+            right: 0;
+            cursor: e-resize;
+        }
+
+        .handle-w {
+            top: 50%;
+            left: 0;
+            cursor: w-resize;
+        }
+
+        .controls {
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+        }
+
+        .crop-btn {
+            background: var(--secondary-color);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .crop-btn:hover {
+            background: rgb(0, 153, 77);
+        }
+
+        #sourceImage {
+            height: 500px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        /* Add these styles in the <style> section */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            width: 80%;
+            max-width: 700px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="https://www.useoftools.com" class="navbar-brand">
+                <i class="fas fa-crop"></i>
+                UseOfTools
+            </a>
+            <div class="navbar-links">
+                <a href="https://www.useoftools.com" class="nav-link">All Tools</a>
+                <a href="https://www.useoftools.com/image-to-pdf" class="nav-link" target="_blank">Image to PDF</a>
+                <a href="#" class="nav-link" onclick="showFAQ()">FAQ</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Crop Image Online</h1>
+
+        <div class="upload-container">
+            <input type="file" id="imageInput" accept="image/*" style="display: none;">
+            <button class="upload-btn" onclick="document.getElementById('imageInput').click()">
+                Upload Image
+            </button>
+        </div>
+
+        <div class="crop-container" id="cropContainer">
+            <img id="sourceImage">
+            <div class="crop-area" id="cropArea">
+                <div class="resize-handle handle-nw"></div>
+                <div class="resize-handle handle-ne"></div>
+                <div class="resize-handle handle-sw"></div>
+                <div class="resize-handle handle-se"></div>
+            </div>
+        </div>
+
+        <div class="controls" id="controls">
+            <button class="crop-btn" onclick="cropImage()">Crop Image</button>
+        </div>
+    </div>
+
+    <div id="faqModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeFAQ()">&times;</span>
+            <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">How do I upload an image?</div>
+                <div class="faq-answer">Click the "Upload Image" button and select any image file from your computer.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What image formats are supported?</div>
+                <div class="faq-answer">The Image Cropper supports common formats like JPG, PNG, GIF, and BMP.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How do I adjust the crop area?</div>
+                <div class="faq-answer">Click and drag the crop area to move it. Use the corner handles to resize the
+                    selection.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What's the minimum crop size?</div>
+                <div class="faq-answer">The minimum crop size is 50x50 pixels to ensure quality output.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">In what format will the cropped image be saved?</div>
+                <div class="faq-answer">The cropped image will be saved as a PNG file, maintaining good quality.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Is there a maximum file size limit?</div>
+                <div class="faq-answer">The file size limit depends on your browser's memory. We recommend files under
+                    10MB for best performance.</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const cropContainer = document.getElementById('cropContainer');
+        const sourceImage = document.getElementById('sourceImage');
+        const cropArea = document.getElementById('cropArea');
+        const controls = document.getElementById('controls');
+        const preview = document.getElementById('preview');
+
+        let isDragging = false;
+        let isResizing = false;
+        let currentHandle = null;
+        let startX, startY, startWidth, startHeight, startLeft, startTop;
+
+        // Handle image upload
+        document.getElementById('imageInput').addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    sourceImage.src = event.target.result;
+                    sourceImage.onload = function () {
+                        initializeCropper();
+                    };
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Replace the existing initializeCropper function
+        function initializeCropper() {
+            cropContainer.style.display = 'block';
+            controls.style.display = 'block';
+
+            // Fixed height
+            const containerHeight = 500;
+
+            // Calculate width while maintaining aspect ratio
+            const aspectRatio = sourceImage.naturalWidth / sourceImage.naturalHeight;
+            const containerWidth = Math.round(containerHeight * aspectRatio);
+
+            // Set dimensions
+            cropContainer.style.width = containerWidth + 'px';
+            sourceImage.style.width = containerWidth + 'px';
+            sourceImage.style.height = containerHeight + 'px';
+
+            // Set initial crop area to 50% of image dimensions
+            const cropWidth = containerWidth * 0.5;  // 50% of width
+            const cropHeight = containerHeight * 0.5; // 50% of height
+
+            // Center the crop area
+            const cropLeft = (containerWidth - cropWidth) / 2;
+            const cropTop = (containerHeight - cropHeight) / 2;
+
+            cropArea.style.width = cropWidth + 'px';
+            cropArea.style.height = cropHeight + 'px';
+            cropArea.style.left = cropLeft + 'px';
+            cropArea.style.top = cropTop + 'px';
+        }
+
+        // Mouse events for dragging
+        cropArea.addEventListener('mousedown', startDragging);
+        document.addEventListener('mousemove', drag);
+        document.addEventListener('mouseup', stopDragging);
+
+        // Handle resize corners
+        document.querySelectorAll('.resize-handle').forEach(handle => {
+            handle.addEventListener('mousedown', startResizing);
+        });
+
+        function startDragging(e) {
+            if (e.target.classList.contains('resize-handle')) return;
+
+            isDragging = true;
+            startX = e.clientX - cropArea.offsetLeft;
+            startY = e.clientY - cropArea.offsetTop;
+            e.preventDefault();
+        }
+
+        function startResizing(e) {
+            isResizing = true;
+            currentHandle = e.target;
+            startX = e.clientX;
+            startY = e.clientY;
+            startWidth = parseInt(getComputedStyle(cropArea).width);
+            startHeight = parseInt(getComputedStyle(cropArea).height);
+            startLeft = cropArea.offsetLeft;
+            startTop = cropArea.offsetTop;
+            e.preventDefault();
+        }
+
+        // Replace the existing drag function
+        function drag(e) {
+            if (!isDragging && !isResizing) return;
+
+            if (isDragging) {
+                const left = e.clientX - startX;
+                const top = e.clientY - startY;
+
+                // Get image boundaries
+                const maxLeft = sourceImage.offsetWidth - cropArea.offsetWidth;
+                const maxTop = sourceImage.offsetHeight - cropArea.offsetHeight;
+
+                // Constrain to image boundaries
+                cropArea.style.left = Math.min(Math.max(0, left), maxLeft) + 'px';
+                cropArea.style.top = Math.min(Math.max(0, top), maxTop) + 'px';
+            }
+
+            if (isResizing) {
+                const deltaX = e.clientX - startX;
+                const deltaY = e.clientY - startY;
+                const minSize = 50;
+
+                if (currentHandle.classList.contains('handle-se')) {
+                    const newWidth = Math.min(startWidth + deltaX, sourceImage.offsetWidth - startLeft);
+                    const newHeight = Math.min(startHeight + deltaY, sourceImage.offsetHeight - startTop);
+                    cropArea.style.width = Math.max(minSize, newWidth) + 'px';
+                    cropArea.style.height = Math.max(minSize, newHeight) + 'px';
+                }
+                else if (currentHandle.classList.contains('handle-sw')) {
+                    const newWidth = Math.min(startWidth - deltaX, startLeft + startWidth);
+                    const newHeight = Math.min(startHeight + deltaY, sourceImage.offsetHeight - startTop);
+                    const newLeft = Math.min(Math.max(0, startLeft + deltaX), startLeft + startWidth - minSize);
+
+                    cropArea.style.width = Math.max(minSize, newWidth) + 'px';
+                    cropArea.style.height = Math.max(minSize, newHeight) + 'px';
+                    cropArea.style.left = newLeft + 'px';
+                }
+                else if (currentHandle.classList.contains('handle-ne')) {
+                    const newWidth = Math.min(startWidth + deltaX, sourceImage.offsetWidth - startLeft);
+                    const newHeight = Math.min(startHeight - deltaY, startTop + startHeight);
+                    const newTop = Math.min(Math.max(0, startTop + deltaY), startTop + startHeight - minSize);
+
+                    cropArea.style.width = Math.max(minSize, newWidth) + 'px';
+                    cropArea.style.height = Math.max(minSize, newHeight) + 'px';
+                    cropArea.style.top = newTop + 'px';
+                }
+                else if (currentHandle.classList.contains('handle-nw')) {
+                    const newWidth = Math.min(startWidth - deltaX, startLeft + startWidth);
+                    const newHeight = Math.min(startHeight - deltaY, startTop + startHeight);
+                    const newLeft = Math.min(Math.max(0, startLeft + deltaX), startLeft + startWidth - minSize);
+                    const newTop = Math.min(Math.max(0, startTop + deltaY), startTop + startHeight - minSize);
+
+                    cropArea.style.width = Math.max(minSize, newWidth) + 'px';
+                    cropArea.style.height = Math.max(minSize, newHeight) + 'px';
+                    cropArea.style.left = newLeft + 'px';
+                    cropArea.style.top = newTop + 'px';
+                }
+            }
+        }
+
+        function stopDragging() {
+            isDragging = false;
+            isResizing = false;
+            currentHandle = null;
+        }
+
+        // Replace the existing cropImage function
+        function cropImage() {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+
+            // Get the scale ratio between natural and displayed image sizes
+            const scaleX = sourceImage.naturalWidth / sourceImage.offsetWidth;
+            const scaleY = sourceImage.naturalHeight / sourceImage.offsetHeight;
+
+            // Calculate crop dimensions in original scale
+            const cropX = cropArea.offsetLeft * scaleX;
+            const cropY = cropArea.offsetTop * scaleY;
+            const cropWidth = cropArea.offsetWidth * scaleX;
+            const cropHeight = cropArea.offsetHeight * scaleY;
+
+            // Set canvas dimensions to match crop size
+            canvas.width = cropWidth;
+            canvas.height = cropHeight;
+
+            // Draw the cropped image
+            ctx.drawImage(sourceImage,
+                cropX, cropY, cropWidth, cropHeight,
+                0, 0, cropWidth, cropHeight
+            );
+
+            // Create download link
+            const link = document.createElement('a');
+            link.download = 'cropped-image.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+
+        // Add these functions before the closing tag
+        function showFAQ() {
+            document.getElementById('faqModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeFAQ() {
+            document.getElementById('faqModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function (event) {
+            const modal = document.getElementById('faqModal');
+            if (event.target == modal) {
+                closeFAQ();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                closeFAQ();
+            }
+        });
+    </script>
+</body>
+
+</html>
