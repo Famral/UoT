@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9724513291347385"
+     crossorigin="anonymous"></script>
+
+    <!-- Primary Meta Tags -->
+    <title>WebP to JPG Converter | Free Online Image Conversion Tool</title>
+    <meta name="title" content="WebP to JPG Converter | Free Online Image Conversion Tool">
+    <meta name="description"
+        content="Convert WebP images to JPG format instantly. Free, fast, and secure online converter. No upload limits, no registration required. Convert WebP to JPG now!">
+    <meta name="keywords"
+        content="webp to jpg, image converter, webp converter, jpg converter, online converter, free converter">
+    <meta name="author" content="UseOfTools">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.useoftools.com/webp-to-jpg">
+    <meta property="og:title" content="WebP to JPG Converter | Free Online Tool">
+    <meta property="og:description"
+        content="Convert WebP images to JPG format instantly. Free, fast, and secure online converter. No registration required.">
+    <meta property="og:image" content="https://www.useoftools.com/image-tools.png">
+
+    <link rel="icon" type="image/x-icon" href="https://www.useoftools.com/favicon.png">
+
+    <link rel="canonical" href="https://www.useoftools.com/webp-to-jpg">
+
+    <meta name="theme-color" content="#2563eb">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <style>
+        :root {
+            --primary: #2c68e9;
+            --primary-dark: #184cdb;
+            --gray: #64748b;
+            --light: #f1f5f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: var(--light);
+            color: #1e293b;
+            line-height: 1.5;
+        }
+
+        .navbar {
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 1rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .header p {
+            color: var(--gray);
+        }
+
+        .drop-zone {
+            padding: 3rem;
+            text-align: center;
+            background: var(--light);
+            border: 2px dashed #cbd5e1;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+
+        .drop-zone:hover {
+            border-color: var(--primary);
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .upload-btn {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .upload-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        .preview-area {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .preview-img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        .loading {
+            display: none;
+            margin: 1rem 0;
+            color: var(--gray);
+        }
+
+        .faq-section {
+            margin-top: 2rem;
+        }
+
+        .faq-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .faq-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-item p {
+            color: var(--gray);
+        }
+
+        @media (min-width: 600px) {
+            .faq-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="https://www.useoftools.com/" class="nav-logo">UseOfTools</a>
+            <div class="nav-links">
+                <a href="https://www.useoftools.com/">All Tools</a>
+                <a href="https://www.useoftools.com/compress-image">Compress Image</a>
+                <a href="https://www.useoftools.com/png-to-webp">PNG to WebP</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="header">
+            <h1>WebP to JPG Converter</h1>
+            <p>Convert WebP images to JPG format instantly - Free & Easy to use</p>
+        </div>
+
+        <div class="drop-zone" id="dropZone">
+            <input type="file" accept=".webp" class="file-input" id="fileInput">
+            <button class="upload-btn">Choose WebP File or Drop Here</button>
+            <p style="margin-top: 1rem; color: var(--gray);">Supports WebP files up to 10MB</p>
+        </div>
+
+        <div class="loading" id="loading">Converting image...</div>
+        <div class="preview-area" id="preview"></div>
+
+        <!-- Add FAQ Section -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What is a WebP file?</h3>
+                    <p>WebP is a modern image format developed by Google that provides superior compression for images
+                        on the web. It offers both lossless and lossy compression modes for images.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Why convert WebP to JPG?</h3>
+                    <p>While WebP offers great compression, some applications or devices might not support it. JPG is
+                        universally supported and remains the most compatible image format.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is there a file size limit?</h3>
+                    <p>Yes, the converter supports WebP files up to 10MB in size. This limit ensures optimal performance
+                        and quick conversion times.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Will I lose image quality?</h3>
+                    <p>The converter maintains high image quality, but some minimal quality loss is normal when
+                        converting between different image formats. We use 90% quality setting for optimal results.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const dropZone = document.getElementById('dropZone');
+        const fileInput = document.getElementById('fileInput');
+        const preview = document.getElementById('preview');
+        const loading = document.getElementById('loading');
+
+        // Handle click on the upload button only
+        document.querySelector('.upload-btn').addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent event bubbling
+            fileInput.click();
+        });
+
+        // Handle drag and drop events
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            dropZone.style.borderColor = '#2563eb'; // Use the primary color directly
+        });
+
+        dropZone.addEventListener('dragleave', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            dropZone.style.borderColor = '#cbd5e1';
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            dropZone.style.borderColor = '#cbd5e1';
+
+            const file = e.dataTransfer.files[0];
+            if (file) {
+                handleFile(file);
+            }
+        });
+
+        // Handle file selection
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                handleFile(file);
+            }
+        });
+
+        function handleFile(file) {
+            // Validate file type
+            if (!file.type.startsWith('image/webp')) {
+                alert('Please select a WebP image file.');
+                return;
+            }
+
+            // Validate file size (10MB)
+            if (file.size > 10 * 1024 * 1024) {
+                alert('File size must be less than 10MB.');
+                return;
+            }
+
+            loading.style.display = 'block';
+            preview.innerHTML = '';
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const img = new Image();
+                img.src = e.target.result;
+
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0);
+
+                    const jpgData = canvas.toDataURL('image/jpeg', 0.9);
+
+                    const previewImg = new Image();
+                    previewImg.src = jpgData;
+                    previewImg.className = 'preview-img';
+
+                    const downloadLink = document.createElement('a');
+                    downloadLink.href = jpgData;
+                    downloadLink.download = file.name.replace('.webp', '.jpg');
+                    downloadLink.className = 'download-btn';
+                    downloadLink.innerHTML = '⬇️ Download JPG';
+
+                    preview.appendChild(previewImg);
+                    preview.appendChild(document.createElement('br'));
+                    preview.appendChild(downloadLink);
+                    loading.style.display = 'none';
+                };
+            };
+            reader.readAsDataURL(file);
+        }
+    </script>
+</body>
+
+</html>
