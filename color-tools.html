@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Free Color Tools - HEX, RGB Converter, Color Palette Generator | UseOfTools</title>
+    <meta name="title" content="Free Color Tools - HEX, RGB Converter, Color Palette Generator | UseOfTools">
+    <meta name="description" content="Free online color tools: Convert HEX to RGB, generate color palettes, create CSS gradients, pick colors. Simple, fast, and no installation needed. Perfect for designers and developers.">
+    <meta name="keywords" content="color converter, hex to rgb, rgb to hex, color palette generator, css gradient generator, color picker, hex color codes, color tools, web colors">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="UseOfTools.com">
+    <meta name="language" content="English">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.useoftools.com/color-tools">
+    <meta property="og:title" content="Free Online Color Tools for Designers and Developers">
+    <meta property="og:description" content="Convert colors between HEX & RGB, generate beautiful color palettes, create CSS gradients. Free online color tools for web design and development.">
+    <meta property="og:image" content="https://www.useoftools.com/online-tools.png">
+    <meta property="og:site_name" content="UseOfTools">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.useoftools.com/color-tools">
+    <meta name="twitter:title" content="Free Online Color Tools for Web Design">
+    <meta name="twitter:description" content="Professional color tools: Convert colors, generate palettes, create gradients. Perfect for designers and developers. Free and easy to use.">
+    <meta name="twitter:image" content="https://www.useoftools.com/online-tools.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.useoftools.com/color-tools">
+
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "UseOfTools Color Tools",
+        "url": "https://www.useoftools.com/color-tools",
+        "description": "Free online color tools for web designers and developers. Convert colors, generate palettes, and create CSS gradients.",
+        "applicationCategory": "Color Tools",
+        "operatingSystem": "Any",
+        "featureList": [
+            "HEX to RGB conversion",
+            "RGB to HEX conversion",
+            "Color palette generation",
+            "CSS gradient generator",
+            "HEX color picker",
+            "Color scheme creator",
+            "CSS background generator",
+            "Free to use",
+            "No registration required",
+            "Instant processing"
+        ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9724513291347385"
+        crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBZ9S6S4NH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-ZBZ9S6S4NH');
+    </script>
+
+    <style>
+        /* Color Palette */
+        :root {
+            --primary-color: #2f3f88;
+            /* Dark Blue */
+            --secondary-color: #2600ff;
+            /* Electric Blue */
+            --text-color: #333;
+            /* Dark Gray */
+            --light-gray: #f8f9fb;
+            /* Light Gray */
+            --white: #fff;
+            /* White */
+            --border-color: #eee;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: var(--white);
+            box-shadow: 0 2px 4px var(--shadow-color);
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            /* Ensure it stays on top */
+        }
+
+        .logo {
+            height: 40px;
+            margin-right: auto;
+            /* Push nav-right to the far right */
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-right a {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .nav-right a:hover {
+            color: var(--secondary-color);
+        }
+
+        .search-icon-link {
+            color: var(--primary-color);
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+            text-decoration: none;
+            line-height: 1;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .search-icon-link:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Main Content Area */
+        main {
+            padding: 2rem 2rem 3rem; /* Add padding around the main content */
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* Category Section */
+        .category-section {
+            margin-bottom: 3rem; /* Space between categories */
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        /* Tool Grid within Category */
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Tool Cards (Styles mostly unchanged) */
+        .tool {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 14px var(--shadow-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            min-height: 180px;
+        }
+
+        .tool:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .tool h3 { /* Changed from h2 to h3 for semantic structure */
+            width: 100%;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-top: 0; /* Remove default margin */
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tool h3 i {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            width: 20px;
+            text-align: center;
+        }
+
+        .tool p {
+            width: 100%;
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+
+        .tool a {
+            width: auto;
+            color: var(--secondary-color);
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            margin-top: auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background-color: rgba(38, 0, 255, 0.1);
+        }
+
+        .tool a i {
+            font-size: 0.8rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--white);
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem; /* Add space above footer */
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .logo {
+                margin-right: 1rem;
+            }
+
+            .nav-right {
+                justify-content: flex-end;
+                margin-top: 0;
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+
+            main {
+                padding: 1.5rem 1rem 2rem;
+            }
+
+            .category-title {
+                font-size: 1.6rem;
+            }
+
+            .tool-grid {
+                grid-template-columns: 1fr; /* Stack tools on smaller screens */
+            }
+
+            .tool {
+                min-height: 160px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .logo {
+                margin-bottom: 0.75rem;
+                margin-right: 0;
+            }
+
+            .nav-right {
+                justify-content: flex-start;
+                width: 100%;
+            }
+
+            .category-title {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <img src="https://www.useoftools.com/logo.png" alt="UseOfTools Logo" class="logo">
+        <div class="nav-right">
+            <a href="/">All Tools</a>
+            <a href="/image-tools">Image Tools</a>
+            <a href="/pdf-tools">PDF Tools</a>
+            <a href="https://www.useoftools.com/search" class="search-icon-link" aria-label="Search">
+                <i class="fas fa-search"></i>
+            </a>
+        </div>
+    </nav>
+
+    <main>
+
+
+        <!-- Color & CSS Tools Section -->
+        <section class="category-section">
+            <h2 class="category-title">Color & CSS Tools</h2>
+            <div class="tool-grid">
+                <div class="tool">
+                    <h3><i class="fas fa-palette"></i>CSS Background Generator</h3>
+                    <p>Generate CSS background color with our CSS generator tool.</p>
+                    <a href="https://www.useoftools.com/css-background-generator">CSS Background Generator <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="tool">
+                    <h3><i class="fas fa-exchange-alt"></i>HEX To RGB Converter</h3>
+                    <p>Enter a valid HEX code (e.g., #ff5733) into the input field and click "Convert". The RGB equivalent will be displayed, and you can copy it using the "Copy RGB Code" button.</p>
+                    <a href="https://www.useoftools.com/hex-to-rgb">Convert HEX To RGB <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="tool">
+                    <h3><i class="fas fa-palette"></i>CSS Gradient Generator</h3>
+                    <p>Free tool to easily make and generate cross browser linear or radial css gradients. You can generate your custom css gradient in HEX or RGBA color format for free.</p>
+                    <a href="https://www.useoftools.com/css-gradient-generator">CSS Gradient Generator <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="tool">
+                    <h3><i class="fas fa-exchange-alt"></i>RGB to HEX Converter</h3>
+                    <p>Enter valid RGB values (e.g., 255, 87, 51) into the input field and click "Convert". The HEX equivalent will be displayed, and you can copy it using the "Copy HEX Code" button.</p>
+                    <a href="https://www.useoftools.com/rgb-to-hex">Convert RGB to HEX <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="tool">
+                    <h3><i class="fas fa-palette"></i>HEX Color Code Generator</h3>
+                    <p>Use our color picker to discover beautiful colors and harmonies with Hex color codes and RGB values.</p>
+                    <a href="https://www.useoftools.com/hex-color-generator">HEX Color Code Generator <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="tool">
+                    <h3><i class="fas fa-swatchbook"></i>Color Palette Generator</h3>
+                    <p>The best color palettes generator! Create the perfect palette or get inspired by thousands of beautiful color schemes.</p>
+                    <a href="https://www.useoftools.com/color-palette-generator">Color Palette Generator <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <footer>
+        <p>© UseOfTools.com — <a href="https://www.useoftools.com/terms">Terms</a> | <a
+                href="https://www.useoftools.com/privacy">Privacy</a> | <a
+                href="https://www.famral.com/contact">Contact</a></p>
+    </footer>
+</body>
+
+</html>
