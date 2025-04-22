@@ -1,336 +1,510 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="canonical" href="https://www.useoftools.com/"/>
-    <title>Free Online Productivity Tools - Best Online Tools</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href="https://www.useoftools.com/" />
+    <title>UseOfTools.com - Best Online Tools</title>
     <meta name="description"
         content="All online tools you need in one website for free. Online tools that are designed to assist various professions, including developers, designers, and others.">
     <link rel="icon" type="image/x-icon" href="https://www.useoftools.com/favicon.png" />
-    <meta property="og:image" content="https://www.useoftools.com/online-tools.png"/>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'>
-    <link rel="stylesheet" href="https://www.useoftools.com/style.css">
-    
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9724513291347385"
-     crossorigin="anonymous"></script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBZ9S6S4NH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <meta property="og:image" content="https://www.useoftools.com/online-tools.png" />
+    <meta property="og:title" content="UseOfTools.com - Best Online Tools" />
+    <meta property="og:description"
+        content="All online tools you need in one website for free. Online tools that are designed to assist various professions, including developers, designers, and others." />
+    <meta property="og:url" content="https://www.useoftools.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="UseOfTools" />
 
-  gtag('config', 'G-ZBZ9S6S4NH');
-</script>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9724513291347385"
+        crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBZ9S6S4NH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-ZBZ9S6S4NH');
+    </script>
+
     <style>
-        section {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 22px;
-            max-width: 1050px;
-            margin: 10px auto;
-            padding: 10px;
-            background-color: #fff;
-            border-radius: 0px;
+        /* Color Palette */
+        :root {
+            --primary-color: #2f3f88;
+            /* Dark Blue */
+            --secondary-color: #2600ff;
+            /* Electric Blue */
+            --text-color: #333;
+            /* Dark Gray */
+            --light-gray: #f8f9fb;
+            /* Light Gray */
+            --white: #fff;
+            /* White */
+            --border-color: #eee;
+            --shadow-color: rgba(0, 0, 0, 0.1);
         }
 
-        .tool {
-            border: 1px solid #cecece;
-            padding: 15px;
-            border-radius: 12px;
-            transition: transform 0.3s;
-            box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-color);
+            line-height: 1.6;
         }
 
-        .tool:hover {
-            border: 1px solid #9e9e9e;
-            padding: 15px;
-            border-radius: 12px;
-            transform: scale(1.02);
-            box-shadow: 0 0 20px rgba(0, 0.1, 0, 0.2);
-        }
-
-        .tool h2 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #2f3f88;
-        }
-
-        .tool p {
-            font-size: 16px;
-            margin-bottom: 15px;
-            color: rgb(104, 104, 104);
-        }
-
-        .tool a {
-            display: inline-block;
-            padding: 10px;
-            background-color: #ffffff;
-            color: #2600ff;
+        a {
             text-decoration: none;
-            font-weight: bold;
-            border-radius: 0px;
-            transition: background-color 0.2s;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
         }
 
-        .tool a:hover {
-            background-color: #ebebff;
-            border-bottom: 2px solid rgb(4, 0, 255);
+        a:hover {
+            color: var(--secondary-color);
         }
 
-        .footer-redinner {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px 0 20px;
+        /* Navigation Bar */
+        nav {
+            background-color: var(--white);
+            box-shadow: 0 2px 4px var(--shadow-color);
+            padding: 1rem 2rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            /* Ensure it stays on top */
+        }
+
+        .logo {
+            height: 40px;
+            margin-right: auto;
+            /* Push nav-right to the far right */
+        }
+
+        /* Removed .main-menu styles */
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            /* Removed margin-top as .main-menu is gone */
+        }
+
+        .nav-right a {
+            /* Style the text links */
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .nav-right a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Styles for the search icon link */
+        .search-icon-link {
+            color: var(--primary-color);
+            cursor: pointer;
+            font-size: 1.2rem;
+            /* Icon size will inherit this */
+            transition: color 0.3s ease;
+            text-decoration: none;
+            /* Remove underline */
+            line-height: 1;
+            /* Prevent extra space */
+            display: inline-flex;
+            /* Align icon better */
+            align-items: center;
+        }
+
+        .search-icon-link:hover {
+            color: var(--secondary-color);
+        }
+
+
+
+        /* Section */
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* Tool Cards */
+        .tool {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 14px var(--shadow-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            min-height: 180px;
+            /* Adjust as needed */
+        }
+
+        .tool:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .tool h2 {
+            width: 100%;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            /* Space between icon and text */
+        }
+
+        .tool h2 i {
+            /* Style for the icon */
+            font-size: 1.1rem;
+            /* Slightly smaller than text */
+            color: var(--primary-color);
+            /* Match heading color */
+            width: 20px;
+            /* Fixed width for alignment */
+            text-align: center;
+        }
+
+        .tool p {
+            width: 100%;
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 1rem;
+            flex: 1;
+            /* Allow paragraph to grow and push link down */
+        }
+
+        .tool a {
+            width: auto;
+            color: var(--secondary-color);
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            margin-top: auto;
+            /* Push link to the bottom */
+            display: inline-flex;
+            /* Align text and icon */
+            align-items: center;
+            gap: 0.4rem;
+            /* Space between text and chevron */
+            background-color: rgba(38, 0, 255, 0.1);
+            /* Light Blue Background */
+        }
+
+        .tool a i {
+            /* Style for chevron icon in link */
+            font-size: 0.8rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--white);
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+
+            /* Adjust nav layout for smaller screens */
+            nav {
+                flex-direction: row;
+                /* Keep logo and nav-right on same row */
+                align-items: center;
+                /* Vertically center items */
+            }
+
+            .logo {
+                margin-right: 1rem;
+                /* Add some space between logo and nav-right */
+            }
+
+            /* Removed .main-menu media query styles */
+
+            .nav-right {
+                /* Removed width: 100% */
+                justify-content: flex-end;
+                /* Align items right */
+                margin-top: 0;
+                /* Reset margin */
+                gap: 1rem;
+                /* Adjust gap for smaller screens */
+                flex-wrap: wrap;
+                /* Allow wrapping if needed */
+            }
+
+            section {
+                grid-template-columns: 1fr;
+                padding: 2rem 1rem;
+            }
+
+            .tool {
+                min-height: 160px;
+            }
+
+            /* Removed dropdown specific media query styles */
+            /*
+            .dropdown-content { ... }
+            */
+        }
+
+        /* Further adjustments for very small screens if needed */
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+                /* Stack logo and nav-right */
+                align-items: flex-start;
+                /* Align items left */
+            }
+
+            .logo {
+                margin-bottom: 0.75rem;
+                /* Space below logo */
+                margin-right: 0;
+                /* Reset margin */
+            }
+
+            .nav-right {
+                justify-content: flex-start;
+                /* Align left when stacked */
+                width: 100%;
+                /* Take full width when stacked */
+            }
         }
     </style>
-
-
-
-
 </head>
 
 <body>
-    <!-- partial:index.partial.html -->
-    <div class="menu-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#272727"
-            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">&lt;!--! Famral Icons Free 1.00 by License -
-            https://www.famral.com/ (Icons: CC BY 4.0) Copyright 2021 Famral Icons --&gt;<line x1="5.99" y1="6" x2="6"
-                y2="6" stroke-linecap="round" stroke-width="4"></line>
-            <line x1="11.99" y1="6" x2="12" y2="6" stroke-linecap="round" stroke-width="4"></line>
-            <line x1="17.99" y1="6" x2="18" y2="6" stroke-linecap="round" stroke-width="4"></line>
-            <line x1="5.99" y1="12" x2="6" y2="12" stroke-linecap="round" stroke-width="4"></line>
-            <line x1="11.99" y1="12" x2="12" y2="12" stroke-linecap="round" stroke-width="4"></line>
-            <line x1="17.99" y1="12" x2="18" y2="12" stroke-linecap="round" stroke-width="4"></line>
-            <line x1="5.99" y1="18" x2="6" y2="18" stroke-linecap="round" stroke-width="4"></line>
-            <line x1="11.99" y1="18" x2="12" y2="18" stroke-linecap="round" stroke-width="4"></line>
-            <line x1="17.99" y1="18" x2="18" y2="18" stroke-linecap="round" stroke-width="4"></line>
-        </svg>
-    </div>
-
-    <div class="container">
-        <!-- Nav -->
-        <nav class="main-nav">
-            <img src="https://www.useoftools.com/logo.png" alt="Online Tools" class="logo">
-
-            <ul class="main-menu">
-                <li><a href="https://www.useoftools.com">Home</a></li>
-                <li><a href="https://www.useoftools.com/password-generator" target="_blank">Strong Password Generator</a></li>
-                <li><a href="https://www.useoftools.com/rgb-to-hex" target="_blank">RGB to HEX</a></li>
-                <li><a href="https://www.sciencebaba.com/" target="_blank">Latest News</a></li>
-            </ul>
-
-            <ul class="right-menu">
-                <li>
-                    <a href="https://www.useoftools.com/search">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none"
-                            stroke="#000000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">&lt;!--!
-                            Famral Icons -
-                            https://icons.famral.com/ (Copyright Famral Icons) --&gt;<circle cx="11"
-                                cy="11" r="9" fill="none"></circle>
-                            <line x1="17.5" y1="17.5" x2="22" y2="22"></line>
-                        </svg>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
-
-
-
-        <section>
-
-            <div class="tool">
-                <h2>PDF Merger</h2>
-                <p>Merge multiple PDF files into a single document quickly.</p>
-                <a href="https://www.useoftools.com/merge-pdf">Merge PDF <i class="fas fa-chevron-right"></i></a>
-            </div>
-
-            <div class="tool">
-                <h2>Compress Image</h2>
-                <p>Compress images quickly and easily online with our free image compressor.</p>
-                <a href="https://www.useoftools.com/compress-image">Compress Image <i class="fas fa-chevron-right"></i></a>
-            </div>
-
-            <div class="tool">
-                <h2>Add Text to Photo</h2>
-                <p>Our free online tool to add text to photo allows you to work with any image.</p>
-                <a href="https://www.useoftools.com/add-text-to-photo">Add Text to Photo <i class="fas fa-chevron-right"></i></a>
-            </div>
-
-            <div class="tool">
-                <h2>Image Cropper</h2>
-                <p>Crop images online effortlessly with our free Image Cropper tool.</p>
-                <a href="https://www.useoftools.com/crop-image">Crop Image <i class="fas fa-chevron-right"></i></a>
-            </div>
-
-            <div class="tool">
-                <h2>PNG to JPEG Converter</h2>
-                <p>Our PNG to JPEG converter is fast, free, and easy to use.</p>
-                <a href="https://www.useoftools.com/png-to-jpeg">Convert PNG to JPEG <i class="fas fa-chevron-right"></i></a>
-            </div>
-            
-            <div class="tool">
-                <h2>PNG to JPG Converter</h2>
-                <p>Our PNG to JPG converter is fast, free, and easy to use.</p>
-                <a href="https://www.useoftools.com/png-to-jpg">Convert PNG to JPG <i class="fas fa-chevron-right"></i></a>
-            </div>
-            
-            <div class="tool">
-                <h2>HTML Link Generator</h2>
-                <p>This is a free online tool to create simple HTML link code from an existing URL.</p>
-                <a href="https://www.useoftools.com/html-link-generator">HTML Link Generator <i class="fas fa-chevron-right"></i></a>
-            </div>
-
-            <div class="tool">
-                <h2>PNG to WebP Converter</h2>
-                <p>Our PNG to WEBP converter is fast, free, and easy to use.</p>
-                <a href="https://www.useoftools.com/png-to-webp">Convert PNG to WEBP <i class="fas fa-chevron-right"></i></a>
-            </div>
-            
-            <div class="tool">
-                <h2>CSS Background Generator</h2>
-                <p>Generate CSS background color with our CSS generator tool.</p>
-                <a href="https://www.useoftools.com/css-background-generator">CSS Background Generator <i class="fas fa-chevron-right"></i></a>
-            </div>
-
-            <div class="tool">
-                <h2>Image to PDF</h2>
-                <p>Convert Images to PDF for free online.</p>
-                <a href="https://www.useoftools.com/image-to-pdf">Image to PDF Converter <i class="fas fa-chevron-right"></i></a>
-            </div>
-
-            <div class="tool">
-                <h2>Secure Password Generator</h2>
-                <p>Instantly generate a secure, random password with the our free online tool.</p>
-                <a href="https://www.useoftools.com/password-generator">Strong Password Generator <i class="fas fa-chevron-right"></i></a>
-            </div>
-
-                        <div class="tool">
-                <h2>Easy Photo Editor</h2>
-                <p>Make your photos stand out with our free online photo editor.</p>
-                <a href="https://www.useoftools.com/photo-editor">Open Photo Editor <i class="fas fa-chevron-right"></i></a>
-            </div>
-
-                        <div class="tool">
-                <h2>PNG to PDF Converter</h2>
-                <p>Convert PNG, JPG images to PDF, rotate them or set a page margin. Convert PNG to PDF online, easily and free.</p>
-                <a href="https://www.useoftools.com/png-to-pdf">Convert PNG to PDF <i class="fas fa-chevron-right"></i></a>
-            </div>
-
-                        <div class="tool">
-                <h2>WebP to JPG Converter</h2>
-                <p>Convert WebP images to JPG format instantly - Free & Easy to use</p>
-                <a href="https://www.useoftools.com/webp-to-jpg">Convert WebP to JPG <i class="fas fa-chevron-right"></i></a>
-            </div>
-
-                        <div class="tool">
-                <h2>JPG to PDF Converter</h2>
-                <p>Convert JPG, PNG images to PDF, rotate them or set a page margin. Convert JPG to PDF online, easily and free.</p>
-                <a href="https://www.useoftools.com/jpg-to-pdf">Convert JPG to PDF <i class="fas fa-chevron-right"></i></a>
-            </div>
-
-                        <div class="tool">
-                <h2>Image Average Color Finder</h2>
-                <p>Image Average Color Finder is a free online tool for finding average color in an image.</p>
-                <a href="https://www.useoftools.com/image-average-color-finder">Find Image Average Color <i class="fas fa-chevron-right"></i></a>
-            </div>
-
-            <div class="tool">
-                <h2>Custom Emoji Maker</h2>
-                <p>Emoji Maker Tools to help you create your own emoji and share it with your friends. Emoji Maker Online is very simple to use and it is completely free.</p>
-                <a href="https://www.useoftools.com/emoji-maker">Custom Emoji Maker <i class="fas fa-chevron-right"></i></a>
-            </div>
-
-            <div class="tool">
-                <h2>Password Strength Checker</h2>
-                <p>Password strength checker has a meter that measures user-entered passwords include a full combination of symbols, numbers, uppercase, and lowercase letters.</p>
-                <a href="https://www.useoftools.com/password-strength-checker">Password Strength Checker <i class="fas fa-chevron-right"></i></a>
-            </div>
-            
-            <div class="tool">
-                <h2>Free UTM Builder</h2>
-                <p>Our UTM builder creates UTM tracking links for Google Analytics in seconds! Learn everything you need to know to start creating UTM codes with this free tool.</p>
-                <a href="https://www.useoftools.com/utm-generator">Free UTM Builder <i class="fas fa-chevron-right"></i></a>
-            </div>
-
-            <div class="tool">
-                <h2>HEX To RGB Converter</h2>
-                <p>Enter a valid HEX code (e.g., #ff5733) into the input field and click "Convert". The RGB equivalent will be displayed, and you can copy it using the "Copy RGB Code" button.</p>
-                <a href="https://www.useoftools.com/hex-to-rgb">Convert HEX To RGB <i class="fas fa-chevron-right"></i></a>
-            </div>
-
-            <div class="tool">
-                <h2>CSS Gradient Generator</h2>
-                <p>Free tool to easily make and generate cross browser linear or radial css gradients. You can generate your custom css gradient in HEX or RGBA color format for free.</p>
-                <a href="https://www.useoftools.com/css-gradient-generator">CSS Gradient Generator <i class="fas fa-chevron-right"></i></a>
-            </div>
-
-            <div class="tool">
-                <h2>Keyword Density Checker</h2>
-                <p>Free Keyword Density Checker tool by Famral Tools allow to check density percentage in content & find how many numbers of times a keyword is used on your content.</p>
-                <a href="https://www.useoftools.com/keyword-density-checker">Keyword Density Checker <i class="fas fa-chevron-right"></i></a>
-            </div>
-
-            <div class="tool">
-                <h2>SVG Vector Editor</h2>
-                <p>Scalable Vector Graphics editor. The best tool for editing SVG files. For beginners and professional designers.</p>
-                <a href="https://www.useoftools.com/svg-editor">SVG Editor <i class="fas fa-chevron-right"></i></a>
-            </div>
-
-            <div class="tool">
-                <h2>RGB to HEX Converter</h2>
-                <p>Enter valid RGB values (e.g., 255, 87, 51) into the input field and click "Convert". The HEX equivalent will be displayed, and you can copy it using the "Copy HEX Code" button.</p>
-                <a href="https://www.useoftools.com/rgb-to-hex">Convert RGB to HEX <i class="fas fa-chevron-right"></i></a>
-            </div>
-            
-            <div class="tool">
-                <h2>HEX Color Code Generator</h2>
-                <p>Use our color picker to discover beautiful colors and harmonies with Hex color codes and RGB values.</p>
-                <a href="https://www.useoftools.com/hex-color-generator">HEX Color Code Generator <i class="fas fa-chevron-right"></i></a>
-            </div>
-
-             <div class="tool">
-                <h2>Free QR Code Generator</h2>
-                <p>Our free QR code generator is a software which stores data into a QR code (for example a text or a website address).</p>
-                <a href="https://www.useoftools.com/qr-code-generator">Free QR Code Generator <i class="fas fa-chevron-right"></i></a>
-            </div>
-
-            <div class="tool">
-                <h2>Color Palette Generator</h2>
-                <p>The best color palettes generator! Create the perfect palette or get inspired by thousands of beautiful color schemes.</p>
-                <a href="https://www.useoftools.com/color-palette-generator">Color Palette Generator <i class="fas fa-chevron-right"></i></a>
-            </div>
-            
-            <!-- Add more tools as needed -->
-        </section>
-
-
-        <br>
-        <br>
-        <br>
-
-
-    </div>
-
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-redinner">
-            <ul>
-                <li><a href="https://www.useoftools.com/">Copyright © UseOfTools.com. All rights reserved.</a></li> <li><a href="https://www.useoftools.com/terms">Terms of Use</a></li> <li><a href="https://www.useoftools.com/privacy">Privacy Policy</a></li> <li><a href="https://www.famral.com/contact">Contact</a></li>
-            </ul>
+    <nav>
+        <img src="https://www.useoftools.com/logo.png" alt="UseOfTools Logo" class="logo">
+        <!-- Removed main-menu div -->
+        <div class="nav-right">
+            <a href="/">All Tools</a>
+            <a href="#">Contact</a>
+            <!-- Wrapped search icon in a link -->
+            <a href="https://www.useoftools.com/search" class="search-icon-link" aria-label="Search">
+                <i class="fas fa-search"></i>
+            </a>
         </div>
-    </footer>
-        <script src="https://www.useoftools.com/script.js"></script>
+    </nav>
 
+    <section>
+        <!-- === NEW TOOL CARDS START HERE === -->
+        <div class="tool">
+            <h2><i class="fas fa-file-pdf"></i>PDF Merger</h2>
+            <p>Merge multiple PDF files into a single document quickly.</p>
+            <a href="https://www.useoftools.com/merge-pdf">Merge PDF <i class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="tool">
+            <h2><i class="fas fa-compress-alt"></i>Compress Image</h2>
+            <p>Compress images quickly and easily online with our free image compressor.</p>
+            <a href="https://www.useoftools.com/compress-image">Compress Image <i class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="tool">
+            <h2><i class="fas fa-font"></i>Add Text to Photo</h2>
+            <p>Our free online tool to add text to photo allows you to work with any image.</p>
+            <a href="https://www.useoftools.com/add-text-to-photo">Add Text to Photo <i
+                    class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="tool">
+            <h2><i class="fas fa-crop-alt"></i>Image Cropper</h2>
+            <p>Crop images online effortlessly with our free Image Cropper tool.</p>
+            <a href="https://www.useoftools.com/crop-image">Crop Image <i class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="tool">
+            <h2><i class="fas fa-exchange-alt"></i>PNG to JPEG Converter</h2>
+            <p>Our PNG to JPEG converter is fast, free, and easy to use.</p>
+            <a href="https://www.useoftools.com/png-to-jpeg">Convert PNG to JPEG <i
+                    class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="tool">
+            <h2><i class="fas fa-exchange-alt"></i>PNG to JPG Converter</h2>
+            <p>Our PNG to JPG converter is fast, free, and easy to use.</p>
+            <a href="https://www.useoftools.com/png-to-jpg">Convert PNG to JPG <i class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="tool">
+            <h2><i class="fas fa-link"></i>HTML Link Generator</h2>
+            <p>This is a free online tool to create simple HTML link code from an existing URL.</p>
+            <a href="https://www.useoftools.com/html-link-generator">HTML Link Generator <i
+                    class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="tool">
+            <h2><i class="fas fa-exchange-alt"></i>PNG to WebP Converter</h2>
+            <p>Our PNG to WEBP converter is fast, free, and easy to use.</p>
+            <a href="https://www.useoftools.com/png-to-webp">Convert PNG to WEBP <i
+                    class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="tool">
+            <h2><i class="fas fa-palette"></i>CSS Background Generator</h2>
+            <p>Generate CSS background color with our CSS generator tool.</p>
+            <a href="https://www.useoftools.com/css-background-generator">CSS Background Generator <i
+                    class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="tool">
+            <h2><i class="fas fa-file-pdf"></i>Image to PDF</h2>
+            <p>Convert Images to PDF for free online.</p>
+            <a href="https://www.useoftools.com/image-to-pdf">Image to PDF Converter <i
+                    class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="tool">
+            <h2><i class="fas fa-key"></i>Secure Password Generator</h2>
+            <p>Instantly generate a secure, random password with the our free online tool.</p>
+            <a href="https://www.useoftools.com/password-generator">Strong Password Generator <i
+                    class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="tool">
+            <h2><i class="fas fa-paint-brush"></i>Easy Photo Editor</h2>
+            <p>Make your photos stand out with our free online photo editor.</p>
+            <a href="https://www.useoftools.com/photo-editor">Open Photo Editor <i class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="tool">
+            <h2><i class="fas fa-file-pdf"></i>PNG to PDF Converter</h2>
+            <p>Convert PNG, JPG images to PDF, rotate them or set a page margin. Convert PNG to PDF online, easily and
+                free.</p>
+            <a href="https://www.useoftools.com/png-to-pdf">Convert PNG to PDF <i class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="tool">
+            <h2><i class="fas fa-exchange-alt"></i>WebP to JPG Converter</h2>
+            <p>Convert WebP images to JPG format instantly - Free & Easy to use</p>
+            <a href="https://www.useoftools.com/webp-to-jpg">Convert WebP to JPG <i
+                    class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="tool">
+            <h2><i class="fas fa-file-pdf"></i>JPG to PDF Converter</h2>
+            <p>Convert JPG, PNG images to PDF, rotate them or set a page margin. Convert JPG to PDF online, easily and
+                free.</p>
+            <a href="https://www.useoftools.com/jpg-to-pdf">Convert JPG to PDF <i class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="tool">
+            <h2><i class="fas fa-eye-dropper"></i>Image Average Color Finder</h2>
+            <p>Image Average Color Finder is a free online tool for finding average color in an image.</p>
+            <a href="https://www.useoftools.com/image-average-color-finder">Find Image Average Color <i
+                    class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="tool">
+            <h2><i class="fas fa-smile-beam"></i>Custom Emoji Maker</h2>
+            <p>Emoji Maker Tools to help you create your own emoji and share it with your friends. Emoji Maker Online is
+                very simple to use and it is completely free.</p>
+            <a href="https://www.useoftools.com/emoji-maker">Custom Emoji Maker <i class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="tool">
+            <h2><i class="fas fa-lock"></i>Password Strength Checker</h2>
+            <p>Password strength checker has a meter that measures user-entered passwords include a full combination of
+                symbols, numbers, uppercase, and lowercase letters.</p>
+            <a href="https://www.useoftools.com/password-strength-checker">Password Strength Checker <i
+                    class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="tool">
+            <h2><i class="fas fa-link"></i>Free UTM Builder</h2>
+            <p>Our UTM builder creates UTM tracking links for Google Analytics in seconds! Learn everything you need to
+                know to start creating UTM codes with this free tool.</p>
+            <a href="https://www.useoftools.com/utm-generator">Free UTM Builder <i class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="tool">
+            <h2><i class="fas fa-exchange-alt"></i>HEX To RGB Converter</h2>
+            <p>Enter a valid HEX code (e.g., #ff5733) into the input field and click "Convert". The RGB equivalent will
+                be displayed, and you can copy it using the "Copy RGB Code" button.</p>
+            <a href="https://www.useoftools.com/hex-to-rgb">Convert HEX To RGB <i class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="tool">
+            <h2><i class="fas fa-palette"></i>CSS Gradient Generator</h2>
+            <p>Free tool to easily make and generate cross browser linear or radial css gradients. You can generate your
+                custom css gradient in HEX or RGBA color format for free.</p>
+            <a href="https://www.useoftools.com/css-gradient-generator">CSS Gradient Generator <i
+                    class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="tool">
+            <h2><i class="fas fa-search"></i>Keyword Density Checker</h2>
+            <p>Free Keyword Density Checker tool by Famral Tools allow to check density percentage in content & find how
+                many numbers of times a keyword is used on your content.</p>
+            <a href="https://www.useoftools.com/keyword-density-checker">Keyword Density Checker <i
+                    class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="tool">
+            <h2><i class="fas fa-vector-square"></i>SVG Vector Editor</h2>
+            <p>Scalable Vector Graphics editor. The best tool for editing SVG files. For beginners and professional
+                designers.</p>
+            <a href="https://www.useoftools.com/svg-editor">SVG Editor <i class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="tool">
+            <h2><i class="fas fa-exchange-alt"></i>RGB to HEX Converter</h2>
+            <p>Enter valid RGB values (e.g., 255, 87, 51) into the input field and click "Convert". The HEX equivalent
+                will be displayed, and you can copy it using the "Copy HEX Code" button.</p>
+            <a href="https://www.useoftools.com/rgb-to-hex">Convert RGB to HEX <i class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="tool">
+            <h2><i class="fas fa-palette"></i>HEX Color Code Generator</h2>
+            <p>Use our color picker to discover beautiful colors and harmonies with Hex color codes and RGB values.</p>
+            <a href="https://www.useoftools.com/hex-color-generator">HEX Color Code Generator <i
+                    class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="tool">
+            <h2><i class="fas fa-qrcode"></i>Free QR Code Generator</h2>
+            <p>Our free QR code generator is a software which stores data into a QR code (for example a text or a
+                website address).</p>
+            <a href="https://www.useoftools.com/qr-code-generator">Free QR Code Generator <i
+                    class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="tool">
+            <h2><i class="fas fa-swatchbook"></i>Color Palette Generator</h2> <!-- Changed icon for variety -->
+            <p>The best color palettes generator! Create the perfect palette or get inspired by thousands of beautiful
+                color schemes.</p>
+            <a href="https://www.useoftools.com/color-palette-generator">Color Palette Generator <i
+                    class="fas fa-chevron-right"></i></a>
+        </div>
+        <!-- === NEW TOOL CARDS END HERE === -->
+    </section>
+
+    <footer>
+        <p>© UseOfTools.com — <a href="https://www.useoftools.com/terms">Terms</a> | <a
+                href="https://www.useoftools.com/privacy">Privacy</a> | <a
+                href="https://www.famral.com/contact">Contact</a></p>
+    </footer>
 </body>
 
 </html>
