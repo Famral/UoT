@@ -9,6 +9,8 @@
     <title>Customized Emoji Maker | Create Your Own Emoji for Free</title>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9724513291347385"
      crossorigin="anonymous"></script>
+    <!-- html2canvas library for capturing DOM elements as images -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <!-- Stylesheet -->
@@ -26,37 +28,44 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin-top: 80px; /* Added margin to prevent overlap with fixed navbar */
         }
 
         .container {
             background-color: #ffffff;
             width: 32em;
+            max-width: 90%; /* Ensure container is responsive */
             border-radius: 1em;
             box-shadow: 0 1.87em 4em rgba(0, 0, 0, 0.2);
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 2.5em;
+            padding: 2em; /* Adjusted padding for smaller screens */
         }
 
         .container>h1 {
             text-align: center;
-            margin-bottom: 29px;
+            margin-bottom: 1.5em; /* Adjusted margin */
             font-weight: 800;
+            font-size: 1.8em; /* Responsive font size */
         }
 
         .buttons-container {
             width: 100%;
             display: flex;
+            flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
             justify-content: space-around;
-            margin-bottom: 1em;
+            gap: 0.5em; /* Add gap between buttons */
+            margin-bottom: 1.5em; /* Adjusted margin */
         }
 
         .buttons-container button {
-            font-size: 1em;
-            width: 6.6em;
-            padding: 0.5em 1em;
-            border-radius: 12px;
+            font-size: 0.9em; /* Adjusted font size */
+            /* width: 6.6em; */ /* Let width be more flexible */
+            flex-grow: 1; /* Allow buttons to grow */
+            min-width: 100px; /* Minimum width for buttons */
+            padding: 0.6em 0.8em; /* Adjusted padding */
+            border-radius: 10px; /* Slightly smaller border radius */
             border: none;
             background-color: #0040ff;
             color: #ffffff;
@@ -69,15 +78,15 @@
         }
 
         .emoji-container {
-            margin-top: 20px;
+            margin-top: 1em; /* Adjusted margin */
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
         .emoji {
-            height: 14.37em;
-            width: 14.37em;
+            height: 12em; /* Adjusted size for responsiveness */
+            width: 12em;  /* Adjusted size for responsiveness */
             background-color: #ffd21f;
             border-radius: 50%;
             position: relative;
@@ -92,18 +101,20 @@
             position: absolute;
             transform: translateX(-50%);
             left: 50%;
+            /* Adjust image sizes if necessary for the new emoji size */
+            max-width: 60%; /* Ensure images scale within the emoji */
         }
 
         .eyes {
-            top: 5em;
+            top: 35%; /* Adjusted positioning based on new emoji size */
         }
 
         .eyebrows {
-            top: 3.12em;
+            top: 20%; /* Adjusted positioning */
         }
 
         .mouth {
-            top: 7.5em;
+            top: 55%; /* Adjusted positioning */
         }
 
 
@@ -117,7 +128,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            padding: 14px 50px;
+            padding: 10px 20px; /* Adjusted padding */
             background-color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             z-index: 1000;
@@ -131,30 +142,34 @@
         .logo {
             display: flex;
             align-items: center;
-            margin-right: 20px;
+            margin-right: 15px; /* Adjusted margin */
         }
 
         .logo img {
-            height: 40px;
-            margin-right: 10px;
+            height: 35px; /* Adjusted logo size */
+            margin-right: 8px; /* Adjusted margin */
+        }
+        .logo span {
+            font-weight: bold;
+            font-size: 1.1em;
         }
 
         .menu {
             display: flex;
-            gap: 15px;
+            gap: 10px; /* Adjusted gap */
         }
 
         .menu a {
             text-decoration: none;
             color: #333;
-            font-size: 16px;
-            padding: 5px 10px;
+            font-size: 15px; /* Adjusted font size */
+            padding: 5px 8px; /* Adjusted padding */
             transition: background-color 0.3s ease;
         }
 
         .menu a:hover {
             background-color: #f5f5f5;
-            border-radius: 10px;
+            border-radius: 8px; /* Adjusted border radius */
         }
 
         .search {
@@ -165,43 +180,70 @@
         .search img {
             cursor: pointer;
             transition: opacity 0.3s ease;
+            width: 18px; /* Adjusted search icon size */
+            height: 18px; /* Adjusted search icon size */
         }
 
         .search img:hover {
             opacity: 0.7;
         }
 
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 1.5em;
+            }
+            .container > h1 {
+                font-size: 1.5em;
+            }
+            .buttons-container button {
+                font-size: 0.8em;
+                padding: 0.5em;
+            }
+            .emoji {
+                height: 10em;
+                width: 10em;
+            }
+        }
+
+
         @media (max-width: 600px) {
+            body {
+                margin-top: 70px; /* Adjust for potentially smaller navbar */
+            }
+            .navbar {
+                padding: 10px 15px;
+            }
+            .logo img {
+                height: 30px;
+            }
+            .logo span {
+                font-size: 1em;
+            }
             .menu {
-                display: none;
+                display: none; /* Will be handled by a toggle if implemented */
             }
+            /* If you add a menu toggle, its styles would go here */
 
-            .menu-toggle {
-                display: block;
-                cursor: pointer;
-                font-size: 18px;
+            .container {
+                width: 95%;
+                padding: 1em;
             }
-
-            .menu.active {
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                background-color: #fff;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                padding: 10px 0;
-                z-index: 999;
+            .container > h1 {
+                font-size: 1.3em;
+                margin-bottom: 1em;
             }
-
-            .menu a {
-                padding: 10px 20px;
-                border-bottom: 1px solid #f0f0f0;
+            .buttons-container {
+                flex-direction: column; /* Stack buttons vertically */
+                gap: 0.8em;
             }
-
-            .menu a:last-child {
-                border-bottom: none;
+            .buttons-container button {
+                width: 100%; /* Make buttons full width */
+            }
+            .emoji {
+                height: 9em;
+                width: 9em;
             }
         }
     </style>
@@ -212,8 +254,7 @@
             <div class="logo-menu">
                 <div class="logo">
                     <img src="./logo.png" alt="Online Tools">
-                    <span></span>
-                    </a>
+                    <span>Emoji Maker</span> <!-- Example site name -->
                 </div>
                 <div class="menu">
                     <a href="https://www.useoftools.com">All Tools</a>
@@ -235,6 +276,7 @@
                 <button id="eyes">Eyes</button>
                 <button id="eyebrows">Eyebrows</button>
                 <button id="mouth">Mouth</button>
+                <button id="download">Download</button> <!-- Download button added here -->
             </div>
             <div class="emoji-container">
                 <div class="emoji">
@@ -259,6 +301,7 @@
             let eyesBtn = document.getElementById("eyes");
             let eyebrowsBtn = document.getElementById("eyebrows");
             let mouthBtn = document.getElementById("mouth");
+            let downloadBtn = document.getElementById("download"); // Reference to the download button
 
             // Setting up counters
             let counter1 = 0;
@@ -267,33 +310,70 @@
             let counter4 = 0;
 
             // Setting up total counts for different images
+            // Ensure these counts match the number of available SVG files (e.g., eye-0.svg to eye-4.svg means eyeCount is 5)
             let totalCounts = {
-                eyeCount: 5,
-                eyebrowsCount: 4,
-                mouthCount: 5,
+                eyeCount: 5,        // Assumes eye-0.svg to eye-4.svg
+                eyebrowsCount: 4,   // Assumes eyebrow-0.svg to eyebrow-3.svg
+                mouthCount: 5,      // Assumes mouth-0.svg to mouth-4.svg
             };
 
             // Adding event listener to each button
             colorBtn.addEventListener("click", () => {
                 emoji.style.backgroundColor = colors[counter1];
-                counter1 = counter1 < colors.length - 1 ? counter1 + 1 : 0;
-                console.log(counter1);
+                counter1 = (counter1 + 1) % colors.length; // Simpler way to loop counter
             });
 
             eyesBtn.addEventListener("click", () => {
                 eyes.setAttribute("src", `./eye-${counter2}.svg`);
-                counter2 = counter2 < totalCounts.eyeCount - 1 ? counter2 + 1 : 0;
+                counter2 = (counter2 + 1) % totalCounts.eyeCount; // Loop through available eyes
             });
 
             eyebrowsBtn.addEventListener("click", () => {
                 eyebrows.setAttribute("src", `./eyebrow-${counter3}.svg`);
-                counter3 = counter3 < totalCounts.eyebrowsCount - 1 ? counter3 + 1 : 0;
+                counter3 = (counter3 + 1) % totalCounts.eyebrowsCount; // Loop through available eyebrows
             });
 
             mouthBtn.addEventListener("click", () => {
                 mouth.setAttribute("src", `./mouth-${counter4}.svg`);
-                counter4 = counter4 < totalCounts.mouthCount - 1 ? counter4 + 1 : 0;
+                counter4 = (counter4 + 1) % totalCounts.mouthCount; // Loop through available mouths
             });
+
+            // Event listener for the download button
+            downloadBtn.addEventListener("click", () => {
+                const emojiElementToCapture = document.querySelector(".emoji");
+
+                html2canvas(emojiElementToCapture, {
+                    backgroundColor: null, // Captures the actual background color of the .emoji div
+                    // useCORS: true, // Uncomment if your SVGs are hosted on a different domain and CORS is configured
+                    logging: true, // Enable logging for debugging html2canvas issues
+                    onclone: (document) => {
+                        // This function is called when html2canvas clones the document
+                        // It can be useful for making sure styles are applied correctly in the cloned document
+                        // For SVGs, sometimes direct styling or ensuring they are fully loaded is important
+                    }
+                }).then(canvas => {
+                    let link = document.createElement('a');
+                    link.download = 'custom-emoji.png'; // Filename for the downloaded image
+                    link.href = canvas.toDataURL('image/png'); // Convert canvas to PNG data URL
+                    link.click(); // Simulate a click to trigger download
+                }).catch(err => {
+                    console.error("Error generating emoji image with html2canvas:", err);
+                    alert("Sorry, there was an error downloading the emoji. Please try again.");
+                });
+            });
+
+            // Initialize emoji with default parts if not already set by HTML
+            // This ensures the counters start correctly if you want the first click to show the *next* item
+            // Or, ensure your initial HTML src attributes match the 0-indexed SVGs.
+            // For example, if eye-4.svg is the initial, counter2 should start at 4 or be ready to go to 0.
+            // The current setup with (counter + 1) % totalCount will show item 0 on the first click after page load.
+            // If you want the first click to show item 1, initialize counters to 0 and SVGs to item 0.
+            // The current HTML has eye-4, eyebrow-3, mouth-4.
+            // To make the first click cycle correctly:
+            counter2 = 4; // To match initial eye-4.svg, next will be eye-0.svg
+            counter3 = 3; // To match initial eyebrow-3.svg, next will be eyebrow-0.svg
+            counter4 = 4; // To match initial mouth-4.svg, next will be mouth-0.svg
+
         </script>
 </body>
 
