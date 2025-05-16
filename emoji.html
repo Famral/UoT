@@ -117,8 +117,10 @@
 
         .emoji-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+            grid-template-columns: repeat(7, minmax(90px, 1fr));
             gap: 1.5rem;
+            /* Remove or adjust max-height if previously set for vertical limit */
+            overflow-x: auto;
         }
 
         .emoji-card {
