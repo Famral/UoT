@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Emoji Symbols : ✂️ Copy and 📋 Paste Emoji 👍 | Free Emoji PNGs</title>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9724513291347385"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9724513291347385"
+        crossorigin="anonymous"></script>
     <link rel="icon" type="image/x-icon" href="https://www.useoftools.com/favicon.png" />
     <meta name="description"
         content="Download your favorite emojis as PNG images for free. Search, preview, and save emojis instantly. Emoji Download Hub offers a huge collection of emoji PNGs for personal and commercial use." />
@@ -125,14 +125,17 @@
             background: var(--card-bg-color);
             border-radius: 10px;
             box-shadow: 0 4px 12px var(--shadow-color);
-            padding: 1rem;
+            padding: 0.5rem;
             text-align: center;
             transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
             cursor: pointer;
             position: relative;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 150px;
+            height: 150px;
         }
 
         .emoji-card:hover {
@@ -142,18 +145,11 @@
 
         .emoji-char {
             font-size: 2.8rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            /* Increased space below emoji */
             display: block;
         }
 
-        .emoji-name {
-            color: var(--text-color);
-            font-size: 0.9rem;
-            margin-bottom: 0.7rem;
-            word-break: break-word;
-            flex-grow: 1;
-            /* Allows name to take space if buttons are fixed height */
-        }
 
         .download-btn {
             background: var(--primary-color);
@@ -161,13 +157,12 @@
             /* Changed from #fff for better contrast */
             border: none;
             border-radius: 6px;
-            padding: 0.6rem 0.9rem;
+            padding: 0.6rem 0.7rem;
             /* Adjusted padding slightly */
             font-size: 0.9rem;
             font-weight: 500;
             cursor: pointer;
             transition: background-color 0.2s;
-            margin-top: 0.2rem;
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -188,10 +183,11 @@
             color: var(--text-color-light);
             border: none;
             border-radius: 6px;
-            padding: 0.6rem 0.8rem;
+            padding: 0.7rem 0.7rem;
+            font-size: 0.9rem;
+            font-weight: 500;
             cursor: pointer;
             transition: background-color 0.2s;
-            margin-top: 0.2rem;
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -208,12 +204,14 @@
         }
 
         .emoji-actions {
+            margin-top: auto;
+            /* Pushes actions to the bottom */
             display: flex;
             justify-content: center;
             align-items: center;
             /* Ensure vertical alignment of buttons */
             gap: 0.5rem;
-            margin-top: 0.5rem;
+
             /* Added some space above buttons */
         }
 
@@ -303,7 +301,7 @@
             /* Light gray, var(--border-color) */
             color: var(--text-color-light);
             text-align: center;
-            padding: 1.5rem 1rem;
+            padding: 0.5rem 1rem;
             margin-top: 3rem;
             border-top: 1px solid #cbd5e0;
             /* Slightly darker border */
@@ -1244,7 +1242,6 @@
                     card.className = 'emoji-card';
                     card.innerHTML = `
       <span class="emoji-char" aria-hidden="true">${emoji.char}</span>
-      <div class="emoji-name" id="emoji-name-${emoji.char.charCodeAt(0)}">${emoji.name}</div>
       <div class="emoji-actions">
         <button class="download-btn" title="Download">
           <svg width="22" height="22" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1261,10 +1258,6 @@
     `;
                     const downloadBtn = card.querySelector('.download-btn');
                     const copyBtn = card.querySelector('.copy-btn');
-                    const emojiNameId = `emoji-name-${emoji.char.charCodeAt(0)}`;
-
-                    downloadBtn.setAttribute('aria-labelledby', emojiNameId);
-                    copyBtn.setAttribute('aria-labelledby', emojiNameId);
 
                     downloadBtn.addEventListener('click', (e) => {
                         e.stopPropagation();
@@ -1273,7 +1266,7 @@
                     copyBtn.addEventListener('click', (e) => {
                         e.stopPropagation();
                         navigator.clipboard.writeText(emoji.char);
-                    }); // Consider adding visual feedback for copy
+                    });
                     emojiGrid.appendChild(card);
                 });
             }
