@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add Watermark to Photo & Image - Add Custom Watermarks Easily</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Easily add custom text watermarks to your images online. Choose font, size, color, opacity, and position. Free, fast, and privacy-friendly.">
+    <meta name="keywords"
+        content="watermark, image watermark, add watermark to image, text watermark, photo watermark, online tool, free watermark tool">
+    <meta name="author" content="UseOfTools">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags (for social sharing) -->
+    <meta property="og:title" content="Image Watermark Tool - Add Custom Watermarks Easily">
+    <meta property="og:description"
+        content="Easily add custom text watermarks to your images online. Choose font, size, color, opacity, and position. Free, fast, and privacy-friendly.">
+    <meta property="og:image" content="https://www.useoftools.com/image-tools.png">
+    <!-- Replace with a URL to an image representing your tool -->
+    <meta property="og:url" content="https://www.useoftools.com/watermark-image">
+    <!-- Replace with the canonical URL of your tool -->
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://www.useoftools.com/favicon.png" type="image/x-icon">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9724513291347385"
+        crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f3f4f6;
+            /* Tailwind Gray 100 */
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            color: #374151;
+            /* Tailwind Gray 700 */
+            /* display: flex; -- Removed to allow navbar at top and then content */
+            /* align-items: center; -- Removed */
+            /* justify-content: center; -- Removed */
+            padding-top: 60px;
+            /* Adjust if navbar height changes */
+        }
+
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1.1rem 2rem;
+            display: flex;
+            /* Use flexbox for alignment */
+            justify-content: space-between;
+            /* Push brand to left, menu to right */
+            align-items: center;
+            /* Vertically align items */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            /* Tailwind Gray 800 */
+            text-decoration: none;
+        }
+
+        .navbar-menu {
+            display: flex;
+            gap: 1.5rem;
+            /* Space between menu items */
+        }
+
+        .navbar-menu a {
+            text-decoration: none;
+            color: #374151;
+            /* Tailwind Gray 700 */
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .navbar-menu a:hover {
+            color: #3b82f6;
+            /* Tailwind Blue 500 */
+        }
+
+        .main-content-area {
+            /* Wrapper for the existing container to handle body flex removal */
+            display: flex;
+            /* Re-apply flex for centering the container */
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 2.5rem 0;
+            /* Add some padding if needed */
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            /* Centered by main-content-area flex */
+            background-color: #ffffff;
+            border-radius: 20px;
+            /* Softer corners */
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.07), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+            /* Softer shadow */
+            padding: 2.5rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .app-layout {
+            display: flex;
+            gap: 2.5rem;
+            /* Space between settings and preview */
+            align-items: flex-start;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1f2937;
+            /* Tailwind Gray 800 */
+            font-size: 2.25rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .settings-panel {
+            flex: 1;
+            min-width: 280px;
+            /* Min width for controls */
+        }
+
+        .preview-panel {
+            flex: 1.5;
+            /* Preview panel can be wider */
+            position: sticky;
+            /* Make preview panel sticky on scroll if content overflows */
+            top: 2.5rem;
+        }
+
+        label {
+            display: block;
+            margin: 1.2rem 0 0.4rem 0;
+            font-weight: 600;
+            color: #4b5563;
+            /* Tailwind Gray 600 */
+            letter-spacing: 0.5px;
+        }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        input[type="file"],
+        input[type="text"],
+        input[type="color"],
+        input[type="range"],
+        select {
+            width: 100%;
+            margin-bottom: 1rem;
+            padding: 0.55rem 0.7rem;
+            border-radius: 7px;
+            border: 1px solid #d1d5db;
+            /* Tailwind Gray 300 */
+            font-size: 1rem;
+            background-color: #ffffff;
+            color: #374151;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.03);
+        }
+
+        input[type="file"]:focus,
+        input[type="text"]:focus,
+        input[type="color"]:focus,
+        input[type="range"]:focus,
+        select:focus {
+            border-color: #3b82f6;
+            /* Tailwind Blue 500 */
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+            /* Focus ring */
+        }
+
+        .controls {
+            display: flex;
+            gap: 1.25rem;
+            /* Increased gap */
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .controls>div {
+            flex: 1 1 calc(50% - 0.625rem);
+            /* Adjusted for gap */
+            min-width: 150px;
+            /* Slightly increased min-width for better layout */
+        }
+
+        .preview-area {
+            text-align: center;
+            background-color: #f9fafb;
+            /* Tailwind Gray 50 */
+            border-radius: 12px;
+            padding: 1rem;
+            border: 2px dashed #e5e7eb;
+            /* Tailwind Gray 200 */
+            width: 90%;
+            min-height: 300px;
+            /* Ensure it has some height initially */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            /* Space before download button */
+            cursor: pointer;
+            transition: border-color 0.2s, background-color 0.2s;
+        }
+
+        .preview-area.drag-over {
+            border-color: #3b82f6;
+            /* Highlight when dragging over - Tailwind Blue 500 */
+            background-color: #eff6ff;
+            /* Lighter blue background - Tailwind Blue 50 */
+        }
+
+        canvas {
+            max-width: 100%;
+            max-height: 60vh;
+            /* Constrain canvas height to viewport */
+            object-fit: contain;
+            border-radius: 8px;
+            background-color: #e5e7eb;
+            /* Tailwind Gray 200 - good for placeholder */
+            border: 1px solid #d1d5db;
+            /* Tailwind Gray 300 */
+        }
+
+        button {
+            background-color: #3b82f6;
+            /* Tailwind Blue 500 */
+            color: #ffffff;
+            border: none;
+            border-radius: 7px;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 0 auto;
+            /* Centered if its container is block or flex item */
+            display: block;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            transition: background-color 0.2s, box-shadow 0.2s;
+        }
+
+        button:disabled {
+            background-color: #e5e7eb;
+            /* Tailwind Gray 200 */
+            color: #9ca3af;
+            /* Tailwind Gray 400 */
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        button:hover:not(:disabled) {
+            background-color: #2563eb;
+            /* Tailwind Blue 600 */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07);
+        }
+
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            /* Align text baselines if font sizes differ */
+            margin-top: 1.2rem;
+            /* Match label's top margin for consistent vertical spacing */
+            margin-bottom: 0.4rem;
+            /* Match label's bottom margin before the input element */
+        }
+
+        .slider-label>span:first-child {
+            font-weight: 600;
+            /* Match label font-weight */
+            color: #4b5563;
+            /* Match label color (Tailwind Gray 600) */
+            letter-spacing: 0.5px;
+            /* Match label letter-spacing */
+            font-size: 1rem;
+            /* Match label font-size */
+        }
+
+        .slider-label>span:last-child {
+            /* This will now be part of button-input-group for value display */
+            font-size: 0.97rem;
+            color: #6b7280;
+        }
+
+        .button-input-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            /* Consistent with other inputs */
+        }
+
+        .button-input-group button {
+            padding: 0.3rem 0.6rem;
+            font-size: 1rem;
+            min-width: 30px;
+            /* Ensure buttons have some width */
+        }
+
+        @media (max-width: 900px) {
+
+            /* Breakpoint for stacking columns */
+            .app-layout {
+                flex-direction: column;
+                align-items: stretch;
+                /* Stretch items to full width */
+                gap: 2rem;
+            }
+
+            .settings-panel,
+            .preview-panel {
+                flex-basis: auto;
+                /* Reset flex-basis */
+                width: 100%;
+                position: static;
+                /* Remove sticky positioning on mobile */
+            }
+
+            .preview-panel {
+                margin-top: 1rem;
+                /* Reduced space when stacked */
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            /* Further adjustments for very small screens */
+            body {
+                align-items: flex-start;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+
+            .container {
+                padding: 1.5rem 1rem;
+                margin: 0 auto;
+                border-radius: 12px;
+            }
+
+            .controls {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .controls>div {
+                min-width: 0;
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="https://www.useoftools.com/" class="navbar-brand">UseOfTools</a>
+        <div class="navbar-menu">
+            <a href="https://www.useoftools.com/">Home</a>
+            <a href="https://www.useoftools.com/image-tools">Image Tools</a>
+            <a href="https://www.useoftools.com/pdf-tools">PDF Tools</a>
+            <a href="https://www.useoftools.com/search">Search Tools</a>
+        </div>
+    </nav>
+
+    <div class="main-content-area">
+        <div class="container">
+            <h1>Add Watermark To Image</h1>
+            <div class="app-layout">
+                <div class="settings-panel">
+                    <input type="file" id="imageInput" accept="image/*" class="visually-hidden">
+
+                    <label for="watermarkText">Watermark Text</label>
+                    <input type="text" id="watermarkText" placeholder="Enter watermark text" value="Sample Watermark">
+
+                    <div class="controls">
+                        <div>
+                            <label for="fontFamily">Font Family</label>
+                            <select id="fontFamily">
+                                <option value="sans-serif" selected>System Default</option>
+                                <option value="Arial, sans-serif">Arial</option>
+                                <option value="Verdana, sans-serif">Verdana</option>
+                                <option value="Tahoma, sans-serif">Tahoma</option>
+                                <option value="Georgia, serif">Georgia</option>
+                                <option value="'Times New Roman', Times, serif">Times New Roman</option>
+                                <option value="'Courier New', Courier, monospace">Courier New</option>
+                                <option value="'Lucida Console', Monaco, monospace">Lucida Console</option>
+                                <option value="'Comic Sans MS', cursive, sans-serif">Comic Sans MS</option>
+                                <option value="Impact, fantasy">Impact</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="fontStyle">Font Style</label>
+                            <select id="fontStyle">
+                                <option value="normal">Normal</option>
+                                <option value="italic">Italic</option>
+                                <option value="bold">Bold</option>
+                                <option value="italic bold">Bold Italic</option>
+                            </select>
+                        </div>
+                        <div>
+                            <div class="slider-label">
+                                <span>Font Size</span>
+                                <!-- Value will be displayed between buttons -->
+                            </div>
+                            <div class="button-input-group">
+                                <button type="button" id="fontSizeDecrement" aria-label="Decrease font size">-</button>
+                                <span id="fontSizeValue" class="value-display"
+                                    style="min-width: 2.5em; text-align: center;">32</span>
+                                <button type="button" id="fontSizeIncrement" aria-label="Increase font size">+</button>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="color">Text Color</label>
+                            <input type="color" id="color" value="#ffffff">
+                        </div>
+                        <div>
+                            <div class="slider-label">
+                                <span>Opacity</span>
+                                <!-- Value will be displayed between buttons -->
+                            </div>
+                            <div class="button-input-group">
+                                <button type="button" id="opacityDecrement" aria-label="Decrease opacity">-</button>
+                                <span id="opacityValue" class="value-display"
+                                    style="min-width: 2.5em; text-align: center;">0.5</span>
+                                <button type="button" id="opacityIncrement" aria-label="Increase opacity">+</button>
+                            </div>
+
+                        </div>
+                        <div>
+                            <label for="position">Position</label>
+                            <select id="position">
+                                <option value="bottom-right">Bottom Right</option>
+                                <option value="bottom-left">Bottom Left</option>
+                                <option value="top-right">Top Right</option>
+                                <option value="top-left">Top Left</option>
+                                <option value="center">Center</option>
+                                <option value="tile">Tile</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="preview-panel">
+                    <div class="preview-area" id="dropZone" tabindex="0" role="button"
+                        aria-label="Image upload area: Click or drag and drop an image here.">
+                        <canvas id="canvas" width="400" height="300"></canvas>
+                    </div>
+                    <button id="downloadBtn" disabled>Download Watermarked Image</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const imageInput = document.getElementById('imageInput');
+        const watermarkText = document.getElementById('watermarkText');
+        const colorInput = document.getElementById('color'); // Renamed to avoid conflict
+        const position = document.getElementById('position');
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const fontSizeValue = document.getElementById('fontSizeValue');
+        const opacityValue = document.getElementById('opacityValue');
+        const fontFamily = document.getElementById('fontFamily');
+        const fontStyle = document.getElementById('fontStyle');
+        const dropZone = document.getElementById('dropZone');
+
+        // Button controls for Font Size
+        const fontSizeDecrement = document.getElementById('fontSizeDecrement');
+        const fontSizeIncrement = document.getElementById('fontSizeIncrement');
+
+        // Button controls for Opacity
+        const opacityDecrement = document.getElementById('opacityDecrement');
+        const opacityIncrement = document.getElementById('opacityIncrement');
+
+        let img = new window.Image();
+        // Store current values in JS
+        let currentFontSize = 32;
+        const FONT_SIZE_MIN = 12;
+        const FONT_SIZE_MAX = 100;
+        let currentOpacity = 0.5;
+        const OPACITY_MIN = 0.0;
+        const OPACITY_MAX = 1.0;
+        const OPACITY_STEP = 0.05;
+
+        function initCanvas() {
+            const currentWidth = canvas.width;
+            const currentHeight = canvas.height;
+            ctx.fillStyle = '#e5e7eb'; // Match canvas background color from CSS
+            ctx.fillRect(0, 0, currentWidth, currentHeight);
+            ctx.font = "16px 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif";
+            ctx.fillStyle = "#6b7280"; // Tailwind Gray 500
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText("Preview Area", currentWidth / 2, currentHeight / 2 - 25);
+            ctx.font = "14px 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif";
+            ctx.fillText("Click or Drag & Drop Image Here", currentWidth / 2, currentHeight / 2);
+            ctx.font = "12px 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif";
+            ctx.fillText("(Max 10MB, PNG, JPG, WEBP)", currentWidth / 2, currentHeight / 2 + 25);
+            downloadBtn.disabled = true;
+            fontSizeValue.textContent = currentFontSize; // Initialize display
+            opacityValue.textContent = currentOpacity.toFixed(2); // Initialize display
+        }
+
+        function drawWatermark() {
+            if (!img.src) {
+                initCanvas(); // If no image, ensure placeholder is shown
+                return;
+            }
+            // Resize canvas to image
+            canvas.width = img.naturalWidth;
+            canvas.height = img.naturalHeight;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+            const text = watermarkText.value;
+            const size = currentFontSize; // Use JS variable
+            const family = fontFamily.value;
+            const style = fontStyle.value;
+
+            let fontDeclaration = "";
+            if (style.includes("italic")) fontDeclaration += "italic ";
+            if (style.includes("bold")) fontDeclaration += "bold ";
+            fontDeclaration += `${size}px ${family}`;
+            ctx.font = fontDeclaration.trim();
+
+            ctx.globalAlpha = currentOpacity; // Use JS variable
+            ctx.fillStyle = colorInput.value; // Use renamed color input
+            ctx.textBaseline = "middle"; // For easier vertical alignment
+
+            let x, y;
+            const margin = 20;
+            const textMetrics = ctx.measureText(text);
+            const textWidth = textMetrics.width;
+            // Using font size as a proxy for height adjustment with textBaseline='middle'
+            const textHeight = size;
+
+            ctx.shadowColor = "#0008";
+            ctx.shadowBlur = 4;
+
+            if (position.value === "tile") {
+                ctx.textAlign = "center";
+                // Tile properties
+                const tilePadding = size * 2.5; // Spacing between tiles, adjust as needed
+                const angle = -30 * Math.PI / 180; // -30 degrees
+
+                // Estimate bounding box of rotated text for stepping
+                // This is an approximation; more accurate methods are complex
+                const textBoundingWidth = textWidth * Math.abs(Math.cos(angle)) + textHeight * Math.abs(Math.sin(angle));
+                const textBoundingHeight = textWidth * Math.abs(Math.sin(angle)) + textHeight * Math.abs(Math.cos(angle));
+
+                const stepX = textBoundingWidth + tilePadding;
+                const stepY = textBoundingHeight + tilePadding * 0.8; // Y step can be a bit tighter
+
+                for (let i = -1; (i * stepX) < canvas.width + textBoundingWidth; i++) { // Start slightly off-canvas to ensure full coverage
+                    for (let j = -1; (j * stepY) < canvas.height + textBoundingHeight; j++) {
+                        ctx.save();
+                        // Distribute tiles more evenly by offsetting every other row
+                        const currentX = (i * stepX) + (j % 2 === 0 ? 0 : stepX / 2);
+                        const currentY = j * stepY;
+
+                        ctx.translate(currentX, currentY);
+                        ctx.rotate(angle);
+                        ctx.fillText(text, 0, 0);
+                        ctx.restore();
+                    }
+                }
+            } else {
+                switch (position.value) {
+                    case "top-left":
+                        ctx.textAlign = "left";
+                        x = margin;
+                        y = margin + textHeight / 2;
+                        break;
+                    case "top-right":
+                        ctx.textAlign = "right";
+                        x = canvas.width - margin;
+                        y = margin + textHeight / 2;
+                        break;
+                    case "bottom-left":
+                        ctx.textAlign = "left";
+                        x = margin;
+                        y = canvas.height - margin - textHeight / 2;
+                        break;
+                    case "bottom-right":
+                        ctx.textAlign = "right";
+                        x = canvas.width - margin;
+                        y = canvas.height - margin - textHeight / 2;
+                        break;
+                    case "center":
+                        ctx.textAlign = "center";
+                        x = canvas.width / 2;
+                        y = canvas.height / 2;
+                        break;
+                    default: // Fallback, e.g. to bottom-right
+                        ctx.textAlign = "right";
+                        x = canvas.width - margin;
+                        y = canvas.height - margin - textHeight / 2;
+                }
+                ctx.fillText(text, x, y);
+            }
+
+            ctx.shadowBlur = 0;
+            ctx.globalAlpha = 1;
+            downloadBtn.disabled = false;
+        }
+
+        function handleFile(file) {
+            if (!file) {
+                if (!img.src) initCanvas(); // Reset if no image was loaded
+                return;
+            }
+            if (!file.type.startsWith('image/')) {
+                alert("Invalid file type. Please upload an image (PNG, JPG, WEBP).");
+                if (!img.src) initCanvas();
+                return;
+            }
+            if (file.size > 10 * 1024 * 1024) { // 10MB limit
+                alert("File is too large. Maximum size is 10MB.");
+                if (!img.src) initCanvas();
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function (evt) {
+                img = new window.Image(); // Create a new Image object
+                img.onload = () => {
+                    canvas.width = img.naturalWidth;
+                    canvas.height = img.naturalHeight;
+                    drawWatermark();
+                };
+                img.onerror = () => {
+                    alert("Error loading image. The file might be corrupted or an unsupported format.");
+                    initCanvas();
+                };
+                img.src = evt.target.result;
+            };
+            reader.onerror = () => {
+                alert("Error reading file.");
+                initCanvas();
+            };
+            reader.readAsDataURL(file);
+        }
+
+        imageInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            handleFile(file);
+        });
+
+        [watermarkText, colorInput, position, fontFamily, fontStyle].forEach(input => {
+            input.addEventListener('input', drawWatermark);
+        });
+
+        // Event listeners for Font Size buttons
+        fontSizeIncrement.addEventListener('click', () => {
+            if (currentFontSize < FONT_SIZE_MAX) {
+                currentFontSize++;
+                fontSizeValue.textContent = currentFontSize;
+                drawWatermark();
+            }
+        });
+        fontSizeDecrement.addEventListener('click', () => {
+            if (currentFontSize > FONT_SIZE_MIN) {
+                currentFontSize--;
+                fontSizeValue.textContent = currentFontSize;
+                drawWatermark();
+            }
+        });
+
+        // Event listeners for Opacity buttons
+        opacityIncrement.addEventListener('click', () => {
+            currentOpacity = Math.min(OPACITY_MAX, parseFloat((currentOpacity + OPACITY_STEP).toFixed(2)));
+            opacityValue.textContent = currentOpacity.toFixed(2);
+            drawWatermark();
+        });
+        opacityDecrement.addEventListener('click', () => {
+            currentOpacity = Math.max(OPACITY_MIN, parseFloat((currentOpacity - OPACITY_STEP).toFixed(2)));
+            opacityValue.textContent = currentOpacity.toFixed(2);
+            drawWatermark();
+        });
+
+        downloadBtn.addEventListener('click', () => {
+            // Ensure canvas is up-to-date before download, especially if no image was loaded yet
+            // but user somehow enabled the button (shouldn't happen with current logic)
+            if (!img.src) {
+                alert("Please upload an image first.");
+                return;
+            }
+            // A final draw might be redundant if UI always triggers it, but safe
+            // drawWatermark(); 
+
+            const link = document.createElement('a');
+            link.download = 'watermarked-image.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        });
+
+        // Drag and Drop Event Handlers
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault(); // Necessary to allow dropping
+            dropZone.classList.add('drag-over');
+        });
+
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('drag-over');
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('drag-over');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                handleFile(files[0]);
+                imageInput.files = files; // Optional: sync with file input
+            }
+        });
+
+        dropZone.addEventListener('click', () => {
+            imageInput.click(); // Trigger hidden file input
+        });
+
+        initCanvas(); // Initialize canvas with placeholder text
+    </script>
+</body>
+
+</html>
