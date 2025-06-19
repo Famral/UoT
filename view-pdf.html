@@ -1,0 +1,364 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Tags -->
+    <title>Free PDF Viewer - View PDF Files Online</title>
+    <meta name="description" content="Free online PDF viewer. View, zoom, and navigate through PDF files easily with our web-based PDF viewer tool.">
+    <meta name="keywords" content="pdf viewer, online pdf reader, view pdf online, pdf tools">
+    <meta name="author" content="UseOfTools">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Free PDF Viewer - View PDF Files Online">
+    <meta property="og:description" content="View PDF files online with our free PDF viewer tool.">
+    <meta property="og:type" content="website">
+    
+    <title>PDF Viewer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9724513291347385"
+        crossorigin="anonymous"></script>
+        
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --bg-color: #f3f4f6;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg-color);
+            padding-top: 80px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .toolbar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            align-items: center;
+        }
+
+        button {
+            padding: 8px 16px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        #pageNum {
+            width: 50px;
+            text-align: center;
+            padding: 5px;
+        }
+
+        #fileInput {
+            display: none;
+        }
+
+        .pdf-container {
+            overflow: auto;
+            background: #333;
+            padding: 20px;
+            border-radius: 6px;
+            min-height: 800px;
+            display: flex;
+            justify-content: center;
+        }
+
+        #pdfCanvas {
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+
+        .zoom-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .page-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        #upload-btn {
+            background: #22c55e;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            background-color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-link {
+            color: #4b5563;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: #f3f4f6;
+        }
+
+        /* Mobile responsive styles */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+            }
+
+            .nav-brand {
+                font-size: 1.25rem;
+            }
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .nav-link {
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="https://www.useoftools.com/view-pdf" class="nav-brand">
+                <i class="fas fa-file-pdf"></i>
+                PDF Viewer
+            </a>
+            <div class="nav-links">
+                <a href="https://www.useoftools.com/" class="nav-link">All Tools</a>
+                <a href="https://www.useoftools.com/image-tools" class="nav-link">Image Tools</a>
+                <a href="https://www.useoftools.com/pdf-tools" class="nav-link">PDF Tools</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="toolbar">
+            <button id="upload-btn" onclick="document.getElementById('fileInput').click()">
+                <i class="fas fa-upload"></i> Upload PDF
+            </button>
+            <input type="file" id="fileInput" accept=".pdf">
+            
+            <div class="page-controls">
+                <button onclick="prevPage()">
+                    <i class="fas fa-chevron-left"></i> Previous
+                </button>
+                <span>Page <input type="number" id="pageNum" value="1"> of <span id="pageCount">0</span></span>
+                <button onclick="nextPage()">
+                    Next <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <div class="zoom-controls">
+                <button onclick="changeZoom(-0.1)">
+                    <i class="fas fa-search-minus"></i>
+                </button>
+                <span id="zoomLevel">100%</span>
+                <button onclick="changeZoom(0.1)">
+                    <i class="fas fa-search-plus"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="pdf-container">
+            <canvas id="pdfCanvas"></canvas>
+        </div>
+    </div>
+
+    <script>
+        // Initialize PDF.js worker
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+        let pdfDoc = null;
+        let pageNum = 1;
+        let zoomLevel = 1;
+        const canvas = document.getElementById('pdfCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Handle file upload
+        document.getElementById('fileInput').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file && file.type === 'application/pdf') {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    loadPDF(event.target.result);
+                };
+                reader.readAsArrayBuffer(file);
+            }
+        });
+
+        async function loadPDF(data) {
+            try {
+                pdfDoc = await pdfjsLib.getDocument({data}).promise;
+                document.getElementById('pageCount').textContent = pdfDoc.numPages;
+                pageNum = 1;
+                renderPage();
+            } catch (error) {
+                console.error('Error loading PDF:', error);
+                alert('Error loading PDF file.');
+            }
+        }
+
+        async function renderPage() {
+            try {
+                const page = await pdfDoc.getPage(pageNum);
+                const viewport = page.getViewport({scale: zoomLevel});
+
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                const renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+
+                await page.render(renderContext);
+                document.getElementById('pageNum').value = pageNum;
+                updateZoomDisplay();
+            } catch (error) {
+                console.error('Error rendering page:', error);
+                alert('Error rendering page.');
+            }
+        }
+
+        function prevPage() {
+            if (pdfDoc && pageNum > 1) {
+                pageNum--;
+                renderPage();
+            }
+        }
+
+        function nextPage() {
+            if (pdfDoc && pageNum < pdfDoc.numPages) {
+                pageNum++;
+                renderPage();
+            }
+        }
+
+        function changeZoom(delta) {
+            if (pdfDoc) {
+                zoomLevel = Math.max(0.1, Math.min(3, zoomLevel + delta));
+                renderPage();
+            }
+        }
+
+        function updateZoomDisplay() {
+            document.getElementById('zoomLevel').textContent = `${Math.round(zoomLevel * 100)}%`;
+        }
+
+        // Handle page number input
+        document.getElementById('pageNum').addEventListener('change', function(e) {
+            const newPage = parseInt(e.target.value);
+            if (pdfDoc && newPage > 0 && newPage <= pdfDoc.numPages) {
+                pageNum = newPage;
+                renderPage();
+            } else {
+                e.target.value = pageNum;
+            }
+        });
+    </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
