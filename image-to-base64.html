@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to Base64 Converter | Convert Images to Base64 online</title>
+    <meta name="description" content="Convert images (JPG, PNG, etc.) to Base64 easily and for free. Upload your images and get their Base64 string. No signup required!">
+    <meta name="keywords" content="image to base64, jpg to base64, png to base64, convert image to base64, free base64 tool, online base64 converter">
+    <meta name="author" content="UseOfTools">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Image to Base64 Converter | Convert Images to Base64 online">
+    <meta property="og:description" content="Convert images (JPG, PNG, etc.) to Base64 easily and for free. Upload your images and get their Base64 string. No signup required!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.useoftools.com/image-to-base64">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Image to Base64 Converter | Free Online Tool">
+    <meta name="twitter:description" content="Convert images (JPG, PNG, etc.) to Base64 easily and for free. Upload your images and get their Base64 string. No signup required!">
+    <link rel="icon" type="image/x-icon" href="https://www.useoftools.com/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9724513291347385"
+        crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            color: #1e293b;
+        }
+        /* Navbar Styles */
+        .navbar-custom {
+            background: #fff;
+            border-bottom: 1px solid #e5e7eb;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            margin-bottom: 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1.5rem;
+            height: 60px;
+        }
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2563eb;
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+        .navbar-logo img {
+            height: 32px;
+            margin-right: 10px;
+        }
+        .navbar-links {
+            display: flex;
+            gap: 1.2rem;
+        }
+        .navbar-links a {
+            color: #1e293b;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            padding: 6px 14px;
+            border-radius: 6px;
+            transition: background 0.2s, color 0.2s;
+            display: block;
+        }
+        .navbar-links a:hover,
+        .navbar-links a.active {
+            background: #e0e7ff;
+            color: #2563eb;
+        }
+        .navbar-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: #2563eb;
+            cursor: pointer;
+        }
+        @media (max-width: 800px) {
+            .navbar-container {
+                padding: 0 0.7rem;
+            }
+            .navbar-links {
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background: #fff;
+                flex-direction: column;
+                gap: 0;
+                min-width: 170px;
+                box-shadow: 0 4px 24px rgba(37,99,235,0.08);
+                border-radius: 0 0 10px 10px;
+                border: 1px solid #e5e7eb;
+                z-index: 2000;
+                padding: 0.5rem 0;
+                display: none;
+            }
+            .navbar-links.show {
+                display: flex;
+            }
+            .navbar-links a {
+                padding: 0.9rem 1.5rem;
+                border-radius: 0;
+                font-size: 1.08rem;
+                color: #1e293b;
+                background: none;
+                border-bottom: 1px solid #f1f5f9;
+                margin: 0;
+            }
+            .navbar-links a:last-child {
+                border-bottom: none;
+            }
+            .navbar-toggle {
+                display: block;
+            }
+        }
+        /* Main Content Styles */
+        .container {
+            max-width: 600px;
+            margin: 2.5rem auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 6px 32px rgba(37,99,235,0.10);
+            padding: 2.2rem 1.7rem 2.7rem 1.7rem;
+        }
+        h1 {
+            text-align: center;
+            color: #2563eb;
+            margin-bottom: 1.2rem;
+            font-size: 2rem;
+        }
+        .desc {
+            text-align: center;
+            color: #334155;
+            margin-bottom: 2rem;
+            font-size: 1.08rem;
+        }
+        .upload-section {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        .custom-file-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 0.9rem 2rem;
+            background: linear-gradient(90deg,#2563eb 60%,#60a5fa 100%);
+            color: #fff;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+        .custom-file-label:hover {
+            background: linear-gradient(90deg,#1e40af 60%,#60a5fa 100%);
+            box-shadow: 0 4px 16px rgba(37,99,235,0.13);
+        }
+        .image-list {
+            margin: 1.2rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .image-thumb {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1.5px solid #dbeafe;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.09);
+            background: #fff;
+        }
+        .btn-convert {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            transition: background 0.2s;
+        }
+        .btn-convert:hover {
+            background: #1e40af;
+        }
+        .footer {
+            text-align: center;
+            color: #64748b;
+            margin-top: 2.5rem;
+            font-size: 1rem;
+            padding-bottom: 1.5rem;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .base64-output {
+            flex: 1;
+            margin-top: 0;
+            background: #f1f5f9;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 0.7rem 1.2rem 0.7rem 0.7rem;
+            word-break: break-all;
+            font-size: 0.97rem;
+            position: relative;
+            min-width: 0;
+            display: flex;
+            align-items: flex-start; /* Fix: align buttons to top of text */
+            gap: 0.5rem;
+            overflow-x: auto;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+        .copy-btn, .show-btn {
+            margin-left: 0;
+            margin-right: 10px;
+            background: linear-gradient(90deg,#2563eb 60%,#60a5fa 100%);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 0.45rem 1.1rem;
+            font-size: 1.02rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+            transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+            position: static;
+            outline: none;
+            border: 2px solid transparent;
+        }
+        .copy-btn:focus, .show-btn:focus {
+            border: 2px solid #2563eb;
+        }
+        .show-btn {
+            background: #e0e7ff;
+            color: #2563eb;
+            margin-right: 0;
+            margin-left: 0;
+            font-weight: 600;
+            border: 2px solid #c7d2fe;
+        }
+        .copy-btn:hover {
+            background: linear-gradient(90deg,#1e40af 60%,#60a5fa 100%);
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(37,99,235,0.13);
+        }
+        .show-btn:hover {
+            background: #c7d2fe;
+            color: #1e40af;
+            border-color: #2563eb;
+        }
+        .base64-output span {
+            flex: 1 1 200px;
+            min-width: 0;
+            word-break: break-all;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .image-base64-block {
+            margin-bottom: 2.2rem;
+            padding: 1.2rem 1rem 1rem 1rem;
+            border-radius: 12px;
+            background: #f8fafc;
+            box-shadow: 0 2px 12px rgba(37,99,235,0.06);
+            border: 1px solid #e0e7ef;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+        }
+        @media (max-width: 700px) {
+            .container {
+                padding: 1.2rem 0.3rem 1.5rem 0.3rem;
+            }
+            .image-base64-block {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.7rem;
+                padding: 0.7rem 0.5rem 0.7rem 0.5rem;
+            }
+            .image-thumb {
+                width: 60px;
+                height: 60px;
+                margin: 0 auto;
+            }
+            .base64-output {
+                font-size: 0.89rem;
+                padding: 0.6rem 0.7rem 0.6rem 0.7rem;
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .base64-output span {
+                margin-bottom: 0.7rem;
+            }
+            .copy-btn, .show-btn {
+                width: 100%;
+                margin: 0 0 0.5rem 0;
+            }
+        }
+        /* Hide scroll bar for base64-output but allow scroll */
+        .base64-output::-webkit-scrollbar {
+            height: 6px;
+            background: #e0e7ef;
+        }
+        .base64-output::-webkit-scrollbar-thumb {
+            background: #c7d2fe;
+            border-radius: 4px;
+        }
+        .faq-section {
+            max-width: 650px;
+            margin: 2.5rem auto 1.5rem auto;
+            background: #f8fafc;
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(37,99,235,0.06);
+            padding: 2rem 1.5rem 1.5rem 1.5rem;
+        }
+        .faq-section h2 {
+            color: #2563eb;
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            text-align: center;
+        }
+        .faq-item {
+            margin-bottom: 1.3rem;
+        }
+        .faq-item h3 {
+            font-size: 1.08rem;
+            color: #1e293b;
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .faq-item p {
+            color: #334155;
+            margin: 0 0 0.2rem 0;
+            font-size: 0.99rem;
+        }
+        .faq-item code {
+            background: #e0e7ff;
+            color: #2563eb;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+        @media (max-width: 700px) {
+            .faq-section {
+                padding: 1.2rem 0.5rem 1rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar-custom">
+        <div class="navbar-container">
+            <a href="https://www.useoftools.com/image-to-base64" class="navbar-logo">
+                Image to Base64
+            </a>
+            <button class="navbar-toggle" aria-label="Open menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="navbar-links">
+                <a href="https://www.useoftools.com/">All Tools</a>
+                <a href="https://www.useoftools.com/image-tools">Image Tools</a>
+                <a href="https://www.useoftools.com/pdf-tools">PDF Tools</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1><i class="fas fa-code"></i> Image to Base64 Converter</h1>
+        <div class="desc">
+            Convert your images to Base64 strings.
+        </div>
+        <div class="upload-section">
+            <label class="custom-file-label" for="imageInput">
+                <i class="fas fa-upload"></i> <span>Select Images</span>
+            </label>
+            <input type="file" id="imageInput" accept="image/*" multiple>
+        </div>
+        <div id="base64List"></div>
+    </div>
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3><i class="fas fa-image"></i> What is Base64?</h3>
+            <p>Base64 is a way to encode binary data (like images) into a text string using only ASCII characters. It's commonly used to embed images directly into HTML, CSS, or JSON files.</p>
+        </div>
+        <div class="faq-item">
+            <h3><i class="fas fa-upload"></i> How do I use this tool?</h3>
+            <p>Click the "Select Images" button, choose one or more images from your device, and the tool will instantly convert them to Base64. You can copy the Base64 string using the "Copy" button.</p>
+        </div>
+        <div class="faq-item">
+            <h3><i class="fas fa-lock"></i> Is my image data safe?</h3>
+            <p>Yes! All conversions are done in your browser. Your images are never uploaded to any server and remain private on your device.</p>
+        </div>
+        <div class="faq-item">
+            <h3><i class="fas fa-code"></i> Where can I use Base64 images?</h3>
+            <p>You can use Base64 images in HTML <code>&lt;img&gt;</code> tags, CSS <code>background-image</code> properties, or anywhere you need to embed image data as text.</p>
+        </div>
+        <div class="faq-item">
+            <h3><i class="fas fa-file-alt"></i> Are there size limits?</h3>
+            <p>There is no strict limit, but very large images will produce long Base64 strings and may slow down your browser. For best results, use images under 2MB.</p>
+        </div>
+    </section>
+    <style>
+        .faq-section {
+            max-width: 650px;
+            margin: 2.5rem auto 1.5rem auto;
+            background: #f8fafc;
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(37,99,235,0.06);
+            padding: 2rem 1.5rem 1.5rem 1.5rem;
+        }
+        .faq-section h2 {
+            color: #2563eb;
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            text-align: center;
+        }
+        .faq-item {
+            margin-bottom: 1.3rem;
+        }
+        .faq-item h3 {
+            font-size: 1.08rem;
+            color: #1e293b;
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .faq-item p {
+            color: #334155;
+            margin: 0 0 0.2rem 0;
+            font-size: 0.99rem;
+        }
+        .faq-item code {
+            background: #e0e7ff;
+            color: #2563eb;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+        @media (max-width: 700px) {
+            .faq-section {
+                padding: 1.2rem 0.5rem 1rem 0.5rem;
+            }
+        }
+    </style>
+    <script>
+        // Navbar mobile toggle
+        const navbarToggle = document.querySelector('.navbar-toggle');
+        const navbarLinks = document.querySelector('.navbar-links');
+        navbarToggle.addEventListener('click', function () {
+            navbarLinks.classList.toggle('show');
+        });
+        document.addEventListener('click', function (e) {
+            if (!navbarToggle.contains(e.target) && !navbarLinks.contains(e.target)) {
+                navbarLinks.classList.remove('show');
+            }
+        });
+
+        // Image to Base64 logic
+        const imageInput = document.getElementById('imageInput');
+        const base64List = document.getElementById('base64List');
+
+        imageInput.addEventListener('change', function (e) {
+            const files = Array.from(e.target.files);
+            base64List.innerHTML = '';
+            files.forEach(file => {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    const fullBase64 = event.target.result;
+                    const block = document.createElement('div');
+                    block.className = 'image-base64-block';
+
+                    const img = document.createElement('img');
+                    img.src = fullBase64;
+                    img.className = 'image-thumb';
+
+                    const base64Div = document.createElement('div');
+                    base64Div.className = 'base64-output';
+
+                    // Truncate for display
+                    const start = fullBase64.slice(0, 30);
+                    const end = fullBase64.slice(-30);
+                    const truncated = `${start}...${end}`;
+
+                    const base64Text = document.createElement('span');
+                    base64Text.textContent = truncated;
+
+                    // Show full button
+                    const showBtn = document.createElement('button');
+                    showBtn.className = 'show-btn';
+                    showBtn.textContent = 'Show Full';
+                    showBtn.onclick = function () {
+                        if (showBtn.textContent === 'Show Full') {
+                            base64Text.textContent = fullBase64;
+                            showBtn.textContent = 'Hide';
+                        } else {
+                            base64Text.textContent = truncated;
+                            showBtn.textContent = 'Show Full';
+                        }
+                    };
+
+                    const copyBtn = document.createElement('button');
+                    copyBtn.className = 'copy-btn';
+                    copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copy';
+                    copyBtn.onclick = function () {
+                        navigator.clipboard.writeText(fullBase64);
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copy', 1200);
+                    };
+
+                    base64Div.appendChild(base64Text);
+                    base64Div.appendChild(showBtn);
+                    base64Div.appendChild(copyBtn);
+                    block.appendChild(img);
+                    block.appendChild(base64Div);
+                    base64List.appendChild(block);
+                };
+                reader.readAsDataURL(file);
+            });
+        });
+    </script>
+</body>
+</html>
