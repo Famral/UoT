@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base64 to Image Converter | Decode Base64 to Images Online</title>
+    <meta name="description" content="Convert Base64 strings to images (JPG, PNG, etc.) easily and for free. Paste your Base64 string and get your image instantly. No signup required!">
+    <meta name="keywords" content="base64 to image, decode base64, base64 to jpg, base64 to png, convert base64 to image, free base64 tool, online base64 decoder">
+    <meta name="author" content="UseOfTools">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Base64 to Image Converter | Decode Base64 to Images Online">
+    <meta property="og:description" content="Convert Base64 strings to images (JPG, PNG, etc.) easily and for free. Paste your Base64 string and get your image instantly. No signup required!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.useoftools.com/base64-to-image">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Base64 to Image Converter | Free Online Tool">
+    <meta name="twitter:description" content="Convert Base64 strings to images (JPG, PNG, etc.) easily and for free. Paste your Base64 string and get your image instantly. No signup required!">
+    <link rel="icon" type="image/x-icon" href="https://www.useoftools.com/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9724513291347385"
+        crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            color: #1e293b;
+        }
+        .navbar-custom {
+            background: #fff;
+            border-bottom: 1px solid #e5e7eb;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            margin-bottom: 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1.5rem;
+            height: 60px;
+        }
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2563eb;
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+        .navbar-links {
+            display: flex;
+            gap: 1.2rem;
+        }
+        .navbar-links a {
+            color: #1e293b;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            padding: 6px 14px;
+            border-radius: 6px;
+            transition: background 0.2s, color 0.2s;
+            display: block;
+        }
+        .navbar-links a:hover,
+        .navbar-links a.active {
+            background: #e0e7ff;
+            color: #2563eb;
+        }
+        .navbar-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: #2563eb;
+            cursor: pointer;
+        }
+        @media (max-width: 800px) {
+            .navbar-container {
+                padding: 0 0.7rem;
+            }
+            .navbar-links {
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background: #fff;
+                flex-direction: column;
+                gap: 0;
+                min-width: 170px;
+                box-shadow: 0 4px 24px rgba(37,99,235,0.08);
+                border-radius: 0 0 10px 10px;
+                border: 1px solid #e5e7eb;
+                z-index: 2000;
+                padding: 0.5rem 0;
+                display: none;
+            }
+            .navbar-links.show {
+                display: flex;
+            }
+            .navbar-links a {
+                padding: 0.9rem 1.5rem;
+                border-radius: 0;
+                font-size: 1.08rem;
+                color: #1e293b;
+                background: none;
+                border-bottom: 1px solid #f1f5f9;
+                margin: 0;
+            }
+            .navbar-links a:last-child {
+                border-bottom: none;
+            }
+            .navbar-toggle {
+                display: block;
+            }
+        }
+        .container {
+            max-width: 600px;
+            margin: 2.5rem auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 6px 32px rgba(37,99,235,0.10);
+            padding: 2.2rem 1.7rem 2.7rem 1.7rem;
+        }
+        h1 {
+            text-align: center;
+            color: #2563eb;
+            margin-bottom: 1.2rem;
+            font-size: 2rem;
+        }
+        .desc {
+            text-align: center;
+            color: #334155;
+            margin-bottom: 2rem;
+            font-size: 1.08rem;
+        }
+        .decode-section {
+            margin-bottom: 2rem;
+        }
+        .base64-textarea {
+            width: 100%;
+            min-height: 120px;
+            font-size: 1.08rem;
+            border-radius: 10px;
+            border: 1.5px solid #c7d2fe;
+            padding: 1rem;
+            resize: vertical;
+            margin-bottom: 1.2rem;
+            background: #f8fafc;
+            color: #1e293b;
+            box-sizing: border-box;
+        }
+        .btn-decode {
+            display: inline-block;
+            padding: 0.7rem 2.2rem;
+            background: linear-gradient(90deg,#2563eb 60%,#60a5fa 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+            transition: background 0.2s, box-shadow 0.2s;
+            margin-bottom: 1.2rem;
+        }
+        .btn-decode:hover {
+            background: linear-gradient(90deg,#1e40af 60%,#60a5fa 100%);
+            box-shadow: 0 4px 16px rgba(37,99,235,0.13);
+        }
+        .decoded-image-block {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+        .decoded-image-block img {
+            max-width: 100%;
+            max-height: 320px;
+            border-radius: 10px;
+            border: 1.5px solid #dbeafe;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.09);
+            background: #fff;
+        }
+        .download-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1.5rem;
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-decoration: none;
+        }
+        .download-btn:hover {
+            background: #1e40af;
+        }
+        .error-message {
+            color: #dc2626;
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            padding: 0.7rem 1rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-size: 1.05rem;
+        }
+        .faq-section {
+            max-width: 650px;
+            margin: 2.5rem auto 1.5rem auto;
+            background: #f8fafc;
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(37,99,235,0.06);
+            padding: 2rem 1.5rem 1.5rem 1.5rem;
+        }
+        .faq-section h2 {
+            color: #2563eb;
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            text-align: center;
+        }
+        .faq-item {
+            margin-bottom: 1.3rem;
+        }
+        .faq-item h3 {
+            font-size: 1.08rem;
+            color: #1e293b;
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .faq-item p {
+            color: #334155;
+            margin: 0 0 0.2rem 0;
+            font-size: 0.99rem;
+        }
+        .faq-item code {
+            background: #e0e7ff;
+            color: #2563eb;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+        @media (max-width: 700px) {
+            .container {
+                padding: 1.2rem 0.3rem 1.5rem 0.3rem;
+            }
+            .faq-section {
+                padding: 1.2rem 0.5rem 1rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar-custom">
+        <div class="navbar-container">
+            <a href="https://www.useoftools.com/base64-to-image" class="navbar-logo">
+                Base64 to Image
+            </a>
+            <button class="navbar-toggle" aria-label="Open menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="navbar-links">
+                <a href="https://www.useoftools.com/">All Tools</a>
+                <a href="https://www.useoftools.com/image-tools">Image Tools</a>
+                <a href="https://www.useoftools.com/pdf-tools">PDF Tools</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1><i class="fas fa-image"></i> Base64 to Image Converter</h1>
+        <div class="desc">
+            Paste your Base64 string below to instantly decode and view your image.
+        </div>
+        <div class="decode-section">
+            <textarea id="base64Input" class="base64-textarea" placeholder="Paste your Base64 string here..."></textarea>
+            <br>
+            <button class="btn-decode" id="decodeBtn"><i class="fas fa-arrow-down"></i> Convert to Image</button>
+            <div id="errorMsg" class="error-message" style="display:none;"></div>
+            <div id="imageResult" class="decoded-image-block"></div>
+        </div>
+    </div>
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3><i class="fas fa-code"></i> What is a Base64 image?</h3>
+            <p>A Base64 image is an image file encoded as a long text string using only ASCII characters. It's often used to embed images directly in HTML, CSS, or JSON files.</p>
+        </div>
+        <div class="faq-item">
+            <h3><i class="fas fa-paste"></i> How do I use this tool?</h3>
+            <p>Paste your Base64 string into the box above and click "Convert to Image". The image will appear below, and you can download it if you wish.</p>
+        </div>
+        <div class="faq-item">
+            <h3><i class="fas fa-lock"></i> Is my data safe?</h3>
+            <p>Yes! All decoding is done in your browser. Your Base64 string is never sent to any server and remains private on your device.</p>
+        </div>
+        <div class="faq-item">
+            <h3><i class="fas fa-file-download"></i> Can I download the image?</h3>
+            <p>Yes, after decoding, a download button will appear below the image. Click it to save the image to your device.</p>
+        </div>
+        <div class="faq-item">
+            <h3><i class="fas fa-exclamation-circle"></i> Why is my image not showing?</h3>
+            <p>Make sure your Base64 string starts with <code>data:image/...</code>. If not, add the correct prefix for your image type (e.g., <code>data:image/png;base64,</code>).</p>
+        </div>
+    </section>
+    <script>
+        // Navbar mobile toggle
+        const navbarToggle = document.querySelector('.navbar-toggle');
+        const navbarLinks = document.querySelector('.navbar-links');
+        navbarToggle.addEventListener('click', function () {
+            navbarLinks.classList.toggle('show');
+        });
+        document.addEventListener('click', function (e) {
+            if (!navbarToggle.contains(e.target) && !navbarLinks.contains(e.target)) {
+                navbarLinks.classList.remove('show');
+            }
+        });
+
+        // Base64 to Image logic
+        const decodeBtn = document.getElementById('decodeBtn');
+        const base64Input = document.getElementById('base64Input');
+        const imageResult = document.getElementById('imageResult');
+        const errorMsg = document.getElementById('errorMsg');
+
+        decodeBtn.addEventListener('click', function () {
+            const base64 = base64Input.value.trim();
+            imageResult.innerHTML = '';
+            errorMsg.style.display = 'none';
+            if (!base64) {
+                errorMsg.textContent = 'Please paste a Base64 string.';
+                errorMsg.style.display = 'block';
+                return;
+            }
+            // Try to detect if the string has a data URL prefix
+            let dataUrl = base64;
+            if (!/^data:image\//.test(base64)) {
+                // Try to guess the type (default to png)
+                dataUrl = 'data:image/png;base64,' + base64.replace(/^[^,]+,/, '');
+            }
+            // Validate base64
+            try {
+                const img = new window.Image();
+                img.onload = function () {
+                    imageResult.innerHTML = '';
+                    imageResult.appendChild(img);
+
+                    // Download button
+                    const downloadBtn = document.createElement('a');
+                    downloadBtn.href = dataUrl;
+                    downloadBtn.download = 'decoded-image';
+                    downloadBtn.className = 'download-btn';
+                    downloadBtn.innerHTML = '<i class="fas fa-download"></i> Download Image';
+                    imageResult.appendChild(downloadBtn);
+                };
+                img.onerror = function () {
+                    errorMsg.textContent = 'Invalid Base64 image string or unsupported format.';
+                    errorMsg.style.display = 'block';
+                };
+                img.src = dataUrl;
+            } catch (e) {
+                errorMsg.textContent = 'Invalid Base64 image string or unsupported format.';
+                errorMsg.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
