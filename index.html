@@ -72,7 +72,7 @@
         nav {
             background-color: var(--white);
             box-shadow: 0 2px 4px var(--shadow-color);
-            padding: 1rem 2rem;
+            padding: 0.7rem 2rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -83,10 +83,74 @@
             /* Ensure it stays on top */
         }
 
+        .nav-left {
+            display: flex;
+            align-items: center;
+        }
+
         .logo {
             height: 40px;
-            margin-right: auto;
-            /* Push nav-right to the far right */
+            margin-right: 0;
+            display: block;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--primary-color);
+            cursor: pointer;
+            margin-left: 1rem;
+        }
+
+        @media (max-width: 900px) {
+            nav {
+                padding: 0.7rem 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-right {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: var(--white);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                box-shadow: 0 4px 14px var(--shadow-color);
+                z-index: 100;
+                padding: 1rem 0;
+            }
+
+            .nav-right.show {
+                display: flex;
+            }
+
+            nav {
+                position: relative;
+            }
+
+            .nav-left {
+                flex: 1;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: row;
+                align-items: center;
+                padding: 0.7rem 0.5rem;
+            }
+
+            .logo {
+                height: 34px;
+            }
         }
 
         /* Removed .main-menu styles */
@@ -290,13 +354,71 @@
                 /* Take full width when stacked */
             }
         }
+
+        /* New styles for menu toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--primary-color);
+            cursor: pointer;
+            margin-left: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-right {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: var(--white);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                box-shadow: 0 4px 14px var(--shadow-color);
+                z-index: 100;
+                padding: 1rem 0;
+            }
+
+            .nav-right.show {
+                display: flex;
+            }
+
+            nav {
+                position: relative;
+            }
+
+            .nav-left {
+                flex: 1;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: row;
+                align-items: center;
+                padding: 0.7rem 0.5rem;
+            }
+
+            .logo {
+                height: 34px;
+            }
+        }
     </style>
 </head>
 
 <body>
     <nav>
-        <img src="https://www.useoftools.com/logo.png" alt="UseOfTools Logo" class="logo">
-        <!-- Removed main-menu div -->
+        <div class="nav-left">
+            <img src="https://www.useoftools.com/logo.png" alt="UseOfTools Logo" class="logo">
+        </div>
+        <button class="menu-toggle" aria-label="Open menu">
+            <i class="fas fa-bars"></i>
+        </button>
         <div class="nav-right">
             <a href="/image-tools">Image Tools</a>
             <a href="/pdf-tools">PDF Tools</a>
@@ -519,6 +641,23 @@
                 href="https://www.useoftools.com/privacy">Privacy</a> | <a
                 href="https://www.famral.com/contact">Contact</a></p>
     </footer>
+
+    <script>
+        // Menu toggle for small devices
+        document.querySelector('.menu-toggle').addEventListener('click', function () {
+            document.querySelector('.nav-right').classList.toggle('show');
+        });
+
+        // Optional: Hide menu when clicking outside
+        document.addEventListener('click', function (e) {
+            const nav = document.querySelector('nav');
+            const navRight = document.querySelector('.nav-right');
+            const menuToggle = document.querySelector('.menu-toggle');
+            if (!nav.contains(e.target) && navRight.classList.contains('show')) {
+                navRight.classList.remove('show');
+            }
+        });
+    </script>
 </body>
 
 </html>
