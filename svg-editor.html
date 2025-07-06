@@ -6,15 +6,154 @@
     <link rel="icon" type="image/x-icon" href="https://www.useoftools.com/favicon.png" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <title>Simple SVG Editor | SVG Vector Editor | Famral Tools</title>
+    <title>Simple SVG Editor | SVG Vector Editor</title>
     <meta name="description" content="Scalable Vector Graphics editor. The best tool for editing SVG files. For beginners and professional designers" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
-    <script defer="defer" src="main.c3adf487.js"></script>
-    <link href="main.99bf5717.css" rel="stylesheet">
+    <script defer="defer" src="https://www.useoftools.com/main.c3adf487.js"></script>
+    <link href="https://www.useoftools.com/main.99bf5717.css" rel="stylesheet">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9724513291347385"
+        crossorigin="anonymous"></script>
+    <style>
+        nav {
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.07);
+            padding: 0.7rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .navbar-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1.2rem;
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2563eb;
+            text-decoration: none;
+            letter-spacing: -1px;
+            gap: 0.5rem;
+            margin-right: auto;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 1.2rem;
+            margin-left: auto;
+        }
+
+        .navbar-links a {
+            color: #1e293b;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            padding: 6px 14px;
+            border-radius: 6px;
+            transition: background 0.2s, color 0.2s;
+            display: block;
+        }
+
+        .navbar-links a:hover,
+        .navbar-links a.active {
+            background: #e0e7ff;
+            color: #2563eb;
+        }
+
+        .navbar-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: #2563eb;
+            cursor: pointer;
+            margin-left: 1rem;
+        }
+
+        @media (max-width: 700px) {
+            .navbar-container {
+                padding: 0 0.5rem;
+            }
+
+            .navbar-links {
+                position: absolute;
+                top: 56px;
+                right: 0;
+                background: #fff;
+                flex-direction: column;
+                gap: 0;
+                min-width: 160px;
+                box-shadow: 0 4px 24px rgba(37, 99, 235, 0.08);
+                border-radius: 0 0 10px 10px;
+                border: 1px solid #e5e7eb;
+                z-index: 2000;
+                padding: 0.5rem 0;
+                display: none;
+                margin-left: 0;
+            }
+
+            .navbar-links.show {
+                display: flex;
+            }
+
+            .navbar-links a {
+                padding: 0.9rem 1.5rem;
+                border-radius: 0;
+                font-size: 1.08rem;
+                color: #1e293b;
+                background: none;
+                border-bottom: 1px solid #f1f5f9;
+                margin: 0;
+            }
+
+            .navbar-links a:last-child {
+                border-bottom: none;
+            }
+
+            .navbar-toggle {
+                display: block;
+            }
+        }
+    </style>
 </head>
 
-<body><noscript>You need to enable JavaScript to run this app.</noscript>
+<body>
+    <nav>
+        <div class="navbar-container" style="justify-content: center;">
+            <div class="navbar-links" style="margin-left:0;">
+                <a href="/">All Tools</a>
+                <a href="/image-tools">Image Tools</a>
+                <a href="/pdf-tools">PDF Tools</a>
+                <a href="/seo-tools">SEO Tools</a>
+            </div>
+            <button class="navbar-toggle" aria-label="Open menu">
+                <span style="font-size:1.3em;">☰</span>
+            </button>
+        </div>
+    </nav>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script>
+        // Navbar mobile toggle
+        const navbarToggle = document.querySelector('.navbar-toggle');
+        const navbarLinks = document.querySelector('.navbar-links');
+        navbarToggle.addEventListener('click', function () {
+            navbarLinks.classList.toggle('show');
+        });
+        document.addEventListener('click', function (e) {
+            if (!navbarToggle.contains(e.target) && !navbarLinks.contains(e.target)) {
+                navbarLinks.classList.remove('show');
+            }
+        });
+    </script>
 </body>
 
 </html>
