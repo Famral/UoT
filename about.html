@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="icon" type="image/x-icon" href="https://www.useoftools.com/favicon.png" />
+  <title>About Us - UseOfTools.com</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Font: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Custom styles for Inter font and smoother transitions */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    /* Smooth transition for the toggle text */
+    .transition-max-h {
+      transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 leading-relaxed">
+
+  <!-- Navbar -->
+  <nav class="bg-blue-600 p-4 flex justify-between items-center text-white shadow-md">
+    <div class="flex items-center flex-shrink-0">
+      <span class="text-xl font-semibold">UseOfTools</span>
+    </div>
+
+
+    <!-- Hamburger Icon (Hidden by default on larger screens) -->
+    <button id="menu-toggle" class="block lg:hidden focus:outline-none">
+      <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+        <path id="open-icon" fill-rule="evenodd" clip-rule="evenodd" d="M4 5h16a1 1 0 010 2H4a1 1 0 110-2zm0 6h16a1 1 0 010 2H4a1 1 0 110-2zm0 6h16a1 1 0 010 2H4a1 1 0 110-2z"/>
+        <path id="close-icon" class="hidden" fill-rule="evenodd" clip-rule="evenodd" d="M7.707 7.707a1 1 0 011.414 0l4.879 4.879 4.878-4.879a1 1 0 111.414 1.414l-4.879 4.879 4.879 4.878a1 1 0 01-1.414 1.414l-4.878-4.879-4.879 4.879a1 1 0 01-1.414-1.414l4.879-4.878-4.879-4.879a1 1 0 010-1.414z"/>
+      </svg>
+    </button>
+
+    <!-- Responsive Menu (Hidden by default on larger screens) -->
+    <div id="responsive-menu" class="hidden lg:block w-full lg:w-auto mt-2 lg:mt-0">
+      <ul class="lg:flex flex-col lg:flex-row items-start lg:items-center space-y-4 lg:space-y-0 lg:space-x-6 text-center lg:text-left">
+        <li><a href="/" class="hover:underline font-medium block py-2 px-3">Home</a></li>
+        <li><a href="/image-tools" class="hover:underline font-medium block py-2 px-3">Image Tools</a></li>
+        <li><a href="/pdf-tools" class="hover:underline font-medium block py-2 px-3">PDF Tools</a></li>
+        <li><a href="/seo-tools" class="hover:underline font-medium block py-2 px-3">SEO Tools</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container mx-auto px-4 py-8 text-center max-w-4xl">
+    <h1 class="text-4xl font-bold text-blue-700 mb-6">About Us</h1>
+    <p class="text-lg text-gray-600 mb-10">UseOfTools.com is your go-to destination for free, fast, and reliable web tools. From QR generators to file converters, our tools are designed to simplify your digital tasks.</p>
+
+    <!-- Mission and Vision -->
+    <div class="grid md:grid-cols-2 gap-6 mb-10">
+      <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer" onclick="toggleText('mission')">
+        <h2 class="text-2xl font-semibold text-blue-600 mb-3 open">Our Mission</h2>
+        <p id="mission" class="max-h-0 opacity-0 overflow-hidden transition-max-h text-gray-700">
+          To empower users globally with free and powerful tools that enhance productivity and simplify routine work.
+        </p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer" onclick="toggleText('vision')">
+        <h2 class="text-2xl font-semibold text-blue-600 mb-3 open">Our Vision</h2>
+        <p id="vision" class="max-h-0 opacity-0 overflow-hidden transition-max-h text-gray-700">
+          To become the most trusted online platform for essential web utilities with a commitment to simplicity, speed, and privacy.
+        </p>
+      </div>
+    </div>
+
+    <!-- Why Choose Us -->
+    <div class="bg-white p-8 rounded-xl shadow-lg mb-10">
+      <h2 class="text-3xl font-bold text-blue-700 mb-6">Why Choose Us?</h2>
+      <ul class="list-none p-0 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
+        <li class="flex items-center text-lg text-gray-700"><span class="text-blue-500 text-2xl mr-3">⚡</span> Fast and lightweight tools</li>
+        <li class="flex items-center text-lg text-gray-700"><span class="text-blue-500 text-2xl mr-3">🔒</span> Privacy focused</li>
+        <li class="flex items-center text-lg text-gray-700"><span class="text-blue-500 text-2xl mr-3">📱</span> Fully responsive</li>
+        <li class="flex items-center text-lg text-gray-700"><span class="text-blue-500 text-2xl mr-3">🚫</span> No sign-up required</li>
+        <li class="flex items-center text-lg text-gray-700"><span class="text-blue-500 text-2xl mr-3">🛠️</span> 100% free to use</li>
+      </ul>
+    </div>
+
+    <!-- Popular Tools -->
+    <div class="mb-10">
+      <h2 class="text-3xl font-bold text-blue-700 mb-6">Popular Tools</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center text-lg font-medium text-gray-700">✅ QR Code Generator</div>
+        <div class="bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center text-lg font-medium text-gray-700">📄 Image to PDF</div>
+        <div class="bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center text-lg font-medium text-gray-700">🖼️ Background Remover</div>
+        <div class="bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center text-lg font-medium text-gray-700">🔤 Text Case Converter</div>
+      </div>
+    </div>
+
+    <!-- Team -->
+    <div class="mb-10">
+      <h2 class="text-3xl font-bold text-blue-700 mb-6">Our Team</h2>
+      <div class="flex flex-wrap justify-center gap-6">
+        <div class="bg-white p-6 rounded-xl shadow-md w-60 text-center hover:shadow-lg transition-all duration-300">
+          <img src="https://placehold.co/100x100/A7D9FF/000000?text=MM" alt="Manish Meena" class="rounded-full mx-auto mb-4 border-2 border-blue-400">
+          <h3 class="text-xl font-semibold text-gray-800">Manish Meena</h3>
+          <p class="text-blue-600">Founder & Developer</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md w-60 text-center hover:shadow-lg transition-all duration-300">
+          <img src="https://placehold.co/100x100/FFD1A7/000000?text=SP" alt="Sneha Patel" class="rounded-full mx-auto mb-4 border-2 border-blue-400">
+          <h3 class="text-xl font-semibold text-gray-800">Sneha Patel</h3>
+          <p class="text-blue-600">UI/UX Designer</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="mb-10">
+      <h2 class="text-3xl font-bold text-blue-700 mb-6">What Users Say</h2>
+      <div class="grid gap-6">
+        <blockquote class="bg-blue-50 p-6 rounded-xl shadow-inner border-l-4 border-blue-500 text-lg italic text-gray-700 max-w-2xl mx-auto">
+          "Quick and simple tools that work perfectly!" – <span class="font-semibold">Aakash</span>
+        </blockquote>
+        <blockquote class="bg-blue-50 p-6 rounded-xl shadow-inner border-l-4 border-blue-500 text-lg italic text-gray-700 max-w-2xl mx-auto">
+          "Love the clean UI and no login needed!" – <span class="font-semibold">Neha</span>
+        </blockquote>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="bg-white p-8 rounded-xl shadow-lg">
+      <h2 class="text-3xl font-bold text-blue-700 mb-6">Contact Us</h2>
+      <p class="text-lg text-gray-700 mb-4">Email: <a href="mailto:contact@famral.com" class="text-blue-600 hover:underline">contact@famral.com</a></p>
+      <p class="text-lg text-gray-700">Follow us on
+        <a href="https://www.instagram.com/connectwithman/" class="text-blue-600 hover:underline font-medium">Instagram</a> |
+        <a href="https://wa.me/917878358707" class="text-blue-600 hover:underline font-medium">WhatsApp</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-200 text-center p-6 mt-12 text-gray-600 text-sm">
+    <p>&copy; 2025 UseOfTools. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleText(id) {
+      const element = document.getElementById(id);
+      // Toggle max-height and opacity for smooth transition
+        if (element.classList.contains('open')) {
+            element.classList.remove('open');
+            element.classList.remove('max-h-screen', 'opacity-100');
+            element.classList.add('max-h-0', 'opacity-0');
+        } else {
+            element.classList.add('open');
+            element.classList.remove('max-h-0', 'opacity-0');
+            element.classList.add('max-h-screen', 'opacity-100'); // max-h-screen is a large enough value
+        }
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        toggleText('vision'); // Open "Our Vision" by default on page load
+      }
+    );
+    document.addEventListener('DOMContentLoaded', function() {
+        toggleText('mission'); // Open "Our Mission" by default on page load
+      }
+    );
+
+    // Responsive Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const responsiveMenu = document.getElementById('responsive-menu');
+    const openIcon = document.getElementById('open-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    menuToggle.addEventListener('click', function() {
+      responsiveMenu.classList.toggle('hidden');
+      openIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>
