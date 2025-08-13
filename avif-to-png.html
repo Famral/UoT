@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVIF to PNG Converter | Free Online AVIF Converter</title>
+    <meta name="description" content="Convert AVIF images to PNG instantly. Free, fast, and secure AVIF to PNG Converter. No signup required!">
+    <meta name="keywords" content="avif to png, avif converter, online avif converter, convert avif, avif image tool">
+    <meta name="author" content="UseOfTools">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="AVIF to PNG Converter | Free Online AVIF Converter">
+    <meta property="og:description" content="Convert AVIF images to PNG instantly. Free, fast, and secure AVIF to PNG Converter. No signup required!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.useoftools.com/avif-to-png">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AVIF to PNG Converter | Free Online AVIF Converter">
+    <meta name="twitter:description" content="Convert AVIF images to PNG instantly. Free, fast, and secure AVIF to PNG Converter. No signup required!">
+    <link rel="icon" type="image/x-icon" href="https://www.useoftools.com/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            color: #1e293b;
+        }
+        .navbar-custom {
+            background: #fff;
+            border-bottom: 1px solid #e5e7eb;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            margin-bottom: 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1.5rem;
+            height: 60px;
+        }
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2563eb;
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+        .navbar-links {
+            display: flex;
+            gap: 1.2rem;
+        }
+        .navbar-links a {
+            color: #1e293b;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            padding: 6px 14px;
+            border-radius: 6px;
+            transition: background 0.2s, color 0.2s;
+            display: block;
+        }
+        .navbar-links a:hover,
+        .navbar-links a.active {
+            background: #e0e7ff;
+            color: #2563eb;
+        }
+        .navbar-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: #2563eb;
+            cursor: pointer;
+        }
+        @media (max-width: 800px) {
+            .navbar-container {
+                padding: 0 0.7rem;
+            }
+            .navbar-links {
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background: #fff;
+                flex-direction: column;
+                gap: 0;
+                min-width: 170px;
+                box-shadow: 0 4px 24px rgba(37,99,235,0.08);
+                border-radius: 0 0 10px 10px;
+                border: 1px solid #e5e7eb;
+                z-index: 2000;
+                padding: 0.5rem 0;
+                display: none;
+            }
+            .navbar-links.show {
+                display: flex;
+            }
+            .navbar-links a {
+                padding: 0.9rem 1.5rem;
+                border-radius: 0;
+                font-size: 1.08rem;
+                color: #1e293b;
+                background: none;
+                border-bottom: 1px solid #f1f5f9;
+                margin: 0;
+            }
+            .navbar-links a:last-child {
+                border-bottom: none;
+            }
+            .navbar-toggle {
+                display: block;
+            }
+        }
+        .container {
+            max-width: 600px;
+            margin: 2.5rem auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 6px 32px rgba(37,99,235,0.10);
+            padding: 2.2rem 1.7rem 2.7rem 1.7rem;
+        }
+        h1 {
+            text-align: center;
+            color: #2563eb;
+            margin-bottom: 1.2rem;
+            font-size: 2rem;
+        }
+        .desc {
+            text-align: center;
+            color: #334155;
+            margin-bottom: 2rem;
+            font-size: 1.08rem;
+        }
+        .convert-section {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .file-input-label {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(90deg,#2563eb 60%,#60a5fa 100%);
+            color: #fff;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+            transition: background 0.2s, box-shadow 0.2s;
+            margin-bottom: 1.2rem;
+        }
+        .file-input-label:hover {
+            background: linear-gradient(90deg,#1e40af 60%,#60a5fa 100%);
+            box-shadow: 0 4px 16px rgba(37,99,235,0.13);
+        }
+        .file-input {
+            display: none;
+        }
+        .btn-convert {
+            display: inline-block;
+            padding: 0.7rem 2.2rem;
+            background: linear-gradient(90deg,#2563eb 60%,#60a5fa 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+            transition: background 0.2s, box-shadow 0.2s;
+            margin-bottom: 1.2rem;
+        }
+        .btn-convert:hover {
+            background: linear-gradient(90deg,#1e40af 60%,#60a5fa 100%);
+            box-shadow: 0 4px 16px rgba(37,99,235,0.13);
+        }
+        .convert-output-block {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+        .converted-image {
+            max-width: 100%;
+            margin: 1.2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+        }
+        .download-btn {
+            display: inline-block;
+            padding: 0.6rem 1.7rem;
+            background: linear-gradient(90deg,#2563eb 60%,#60a5fa 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 0.7rem;
+            text-decoration: none;
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+        .download-btn:hover {
+            background: linear-gradient(90deg,#1e40af 60%,#60a5fa 100%);
+        }
+        .popular-tools-section {
+            max-width: 650px;
+            margin: 2.5rem auto 1.5rem auto;
+            background: #f8fafc;
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(37,99,235,0.06);
+            padding: 2rem 1.5rem 1.5rem 1.5rem;
+        }
+        .popular-tools-section h2 {
+            color: #2563eb;
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+            text-align: center;
+            letter-spacing: -1px;
+        }
+        .popular-tools-list.horizontal-tools {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 1.2rem;
+            justify-content: center;
+            align-items: stretch;
+        }
+        .popular-tools-list.horizontal-tools .tool-card {
+            flex: 1 1 0;
+            min-width: 0;
+            max-width: 200px;
+        }
+        .tool-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+            padding: 1.1rem 1.4rem;
+            text-decoration: none;
+            color: #1e293b;
+            font-weight: 500;
+            font-size: 1.07rem;
+            min-width: 0px;
+            max-width: 200px;
+            transition: box-shadow 0.2s, transform 0.2s, color 0.2s;
+        }
+        .tool-card i {
+            font-size: 2rem;
+            color: #2563eb;
+            margin-bottom: 0.6rem;
+        }
+        .tool-card:hover {
+            box-shadow: 0 6px 24px rgba(68, 94, 239, 0.13);
+            color: #2563eb;
+            transform: translateY(-3px) scale(1.04);
+        }
+        @media (max-width: 900px) {
+            .popular-tools-list.horizontal-tools .tool-card {
+                max-width: 160px;
+                font-size: 0.98rem;
+                padding: 1rem 0.5rem;
+            }
+        }
+        @media (max-width: 700px) {
+            .popular-tools-list.horizontal-tools {
+                flex-wrap: wrap;
+            }
+            .popular-tools-list.horizontal-tools .tool-card {
+                flex: 1 1 45%;
+                max-width: 100%;
+                min-width: 120px;
+            }
+        }
+        @media (max-width: 480px) {
+            .popular-tools-list.horizontal-tools {
+                flex-direction: column;
+                gap: 0.7rem;
+            }
+            .popular-tools-list.horizontal-tools .tool-card {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+        .faq-section {
+            max-width: 650px;
+            margin: 2.5rem auto 1.5rem auto;
+            background: #f8fafc;
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(37,99,235,0.06);
+            padding: 2rem 1.5rem 1.5rem 1.5rem;
+        }
+        .faq-section h2 {
+            color: #2563eb;
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            text-align: center;
+        }
+        .faq-item {
+            margin-bottom: 1.3rem;
+        }
+        .faq-item h3 {
+            font-size: 1.08rem;
+            color: #1e293b;
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .faq-item p {
+            color: #334155;
+            margin: 0 0 0.2rem 0;
+            font-size: 0.99rem;
+        }
+        .faq-item code {
+            background: #e0e7ff;
+            color: #2563eb;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+        @media (max-width: 700px) {
+            .popular-tools-section,
+            .faq-section {
+                padding: 1.2rem 0.5rem 1rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar-custom">
+        <div class="navbar-container">
+            <a href="https://www.useoftools.com/avif-to-png" class="navbar-logo">
+                AVIF to PNG
+            </a>
+            <button class="navbar-toggle" aria-label="Open menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="navbar-links">
+                <a href="https://www.useoftools.com/">All Tools</a>
+                <a href="https://www.useoftools.com/image-tools">Image Tools</a>
+                <a href="https://www.useoftools.com/pdf-tools">PDF Tools</a>
+                <a href="https://www.useoftools.com/seo-tools">SEO Tools</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1><i class="fas fa-image"></i> AVIF to PNG Converter</h1>
+        <div class="desc">
+            Convert your AVIF images to PNG instantly. Fast, secure, and free.
+        </div>
+        <div class="convert-section">
+            <label for="fileInput" class="file-input-label">
+                <i class="fas fa-upload"></i> Choose AVIF File
+                <input type="file" id="fileInput" class="file-input" accept=".avif,image/avif">
+            </label>
+            <br>
+            <button class="btn-convert" id="convertBtn"><i class="fas fa-sync-alt"></i> Convert to PNG</button>
+            <div id="convertResult" class="convert-output-block"></div>
+        </div>
+    </div>
+    <!-- Popular Tools Section -->
+    <section class="popular-tools-section">
+        <h2><i class="fas fa-fire"></i> Popular Tools</h2>
+        <div class="popular-tools-list horizontal-tools">
+            <a class="tool-card" href="https://www.useoftools.com/compress-image">
+                <i class="fas fa-compress"></i>
+                <span>Image Compressor</span>
+            </a>
+            <a class="tool-card" href="https://www.useoftools.com/png-to-jpg">
+                <i class="fas fa-image"></i>
+                <span>PNG to JPG</span>
+            </a>
+            <a class="tool-card" href="https://www.useoftools.com/png-to-webp">
+                <i class="fas fa-image"></i>
+                <span>PNG to WEBP</span>
+            </a>
+            <a class="tool-card" href="https://www.useoftools.com/svg-editor">
+                <i class="fas fa-vector-square"></i>
+                <span>SVG Editor</span>
+            </a>
+        </div>
+    </section>
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3><i class="fas fa-image"></i> What is an AVIF file?</h3>
+            <p>AVIF is a modern image format offering high compression and quality. Some browsers and tools may not support it yet.</p>
+        </div>
+        <div class="faq-item">
+            <h3><i class="fas fa-sync-alt"></i> How do I convert AVIF to PNG?</h3>
+            <p>Upload your AVIF file and click "Convert to PNG". Download your converted image instantly.</p>
+        </div>
+        <div class="faq-item">
+            <h3><i class="fas fa-lock"></i> Is my image safe?</h3>
+            <p>Yes! All conversions happen in your browser. Your images never leave your device.</p>
+        </div>
+        <div class="faq-item">
+            <h3><i class="fas fa-bolt"></i> Is this tool free?</h3>
+            <p>Yes, this AVIF to PNG Converter is 100% free and requires no signup.</p>
+        </div>
+    </section>
+    <script>
+        // Navbar mobile toggle
+        const navbarToggle = document.querySelector('.navbar-toggle');
+        const navbarLinks = document.querySelector('.navbar-links');
+        navbarToggle.addEventListener('click', function () {
+            navbarLinks.classList.toggle('show');
+        });
+        document.addEventListener('click', function (e) {
+            if (!navbarToggle.contains(e.target) && !navbarLinks.contains(e.target)) {
+                navbarLinks.classList.remove('show');
+            }
+        });
+
+        // AVIF to PNG Converter logic
+        const fileInput = document.getElementById('fileInput');
+        const convertBtn = document.getElementById('convertBtn');
+        const convertResult = document.getElementById('convertResult');
+        let loadedImage = null;
+
+        fileInput.addEventListener('change', function () {
+            convertResult.innerHTML = '';
+            loadedImage = null;
+            const file = fileInput.files[0];
+            if (!file) return;
+            if (!file.type.includes('avif')) {
+                convertResult.innerHTML = '<div style="color:#dc2626;">Please select a valid AVIF image file.</div>';
+                return;
+            }
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                loadedImage = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        });
+
+        convertBtn.addEventListener('click', function () {
+            convertResult.innerHTML = '';
+            if (!loadedImage) {
+                convertResult.innerHTML = '<div style="color:#dc2626;">Please select an AVIF image first.</div>';
+                return;
+            }
+            const img = new Image();
+            img.onload = function () {
+                const canvas = document.createElement('canvas');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0);
+                const mime = 'image/png';
+                const ext = 'png';
+                canvas.toBlob(function(blob) {
+                    const url = URL.createObjectURL(blob);
+                    convertResult.innerHTML = `
+                        <img src="${url}" class="converted-image" alt="Converted Image">
+                        <br>
+                        <a href="${url}" download="converted.${ext}" class="download-btn"><i class="fas fa-download"></i> Download ${ext.toUpperCase()}</a>
+                    `;
+                }, mime, 0.95);
+            };
+            img.onerror = function () {
+                convertResult.innerHTML = '<div style="color:#dc2626;">Failed to load AVIF image. Your browser may not support AVIF.</div>';
+            };
+            img.src = loadedImage;
+        });
+    </script>
+</body>
+</html>
