@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Viewer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        :root {
+            --editor-bg: #282c34;
+            --border-color: #ddd;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .navbar {
+            background-color: #ffffff;
+            padding: 0 20px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+            flex-shrink: 0; /* Prevent navbar from shrinking */
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .viewer-container {
+            display: flex;
+            flex-grow: 1;
+            overflow: hidden; /* Prevent overflow */
+        }
+
+        .panel {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .panel-title {
+            padding: 8px 12px;
+            background-color: #f7f7f7;
+            border-bottom: 1px solid var(--border-color);
+            font-weight: 600;
+            color: #333;
+        }
+
+        #html-input {
+            flex-grow: 1;
+            border: none;
+            padding: 15px;
+            font-family: 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            background-color: var(--editor-bg);
+            color: #f8f8f2;
+            resize: none;
+            outline: none;
+        }
+
+        #output-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background-color: #ffffff;
+        }
+
+        .panel.left {
+            border-right: 1px solid var(--border-color);
+        }
+
+        /* --- Responsive Design for Small Screens --- */
+        @media (max-width: 600px) {
+            .viewer-container {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .panel {
+                width: 100%;
+                height: 50vh; /* Each panel takes half the viewport height */
+            }
+
+            .panel.left {
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="navbar-brand"><i class="fa-solid fa-code"></i>HTML Viewer</a>
+    </nav>
+    <div class="viewer-container">
+        <div class="panel left">
+            <div class="panel-title">HTML Code</div>
+            <textarea id="html-input" placeholder="Type your HTML, CSS, and JS here..."></textarea>
+        </div>
+        <div class="panel right">
+            <div class="panel-title">Output</div>
+            <iframe id="output-frame"></iframe>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const htmlInput = document.getElementById('html-input');
+            const outputFrame = document.getElementById('output-frame');
+
+            function renderOutput() {
+                const sourceCode = htmlInput.value;
+                const frameDoc = outputFrame.contentDocument || outputFrame.contentWindow.document;
+
+                frameDoc.open();
+                frameDoc.write(sourceCode);
+                frameDoc.close();
+            }
+
+            // Render on input change
+            htmlInput.addEventListener('input', renderOutput);
+
+            // Initial render on page load
+            renderOutput();
+        });
+    </script>
+</body>
+</html>
