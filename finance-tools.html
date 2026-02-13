@@ -1,0 +1,372 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="https://www.useoftools.com/favicon.png" />
+    <!-- Primary Meta Tags -->
+    <title>Free Online Finance Tools - Calculators, Converters | UseOfTools</title>
+    <meta name="title" content="Free Online Finance Tools - Calculators, Converters | UseOfTools">
+    <meta name="description" content="Free online finance tools including GST Calculator, Income Tax Calculator, Home Loan EMI, Crypto Converters, and more. Fast, accurate, and easy to use.">
+    <meta name="keywords" content="finance tools, gst calculator, income tax calculator, home loan calculator, crypto converter, emi calculator, financial calculators">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="UseOfTools.com">
+    <meta name="language" content="English">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.useoftools.com/finance-tools">
+    <meta property="og:title" content="Free Online Finance Tools - Calculators, Converters">
+    <meta property="og:description" content="Calculate taxes, loans, and crypto investments with our free online finance tools. No registration needed.">
+    <meta property="og:image" content="https://www.useoftools.com/finance-tools.png">
+    <meta property="og:site_name" content="UseOfTools">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.useoftools.com/finance-tools">
+    <meta name="twitter:title" content="Free Online Finance Tools - Calculators, Converters">
+    <meta name="twitter:description" content="Calculate taxes, loans, and crypto investments with our free online finance tools. No registration needed.">
+    <meta name="twitter:image" content="https://www.useoftools.com/finance-tools.png">
+
+    <link rel="canonical" href="https://www.useoftools.com/finance-tools">
+
+    
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "UseOfTools Finance Tools",
+        "url": "https://www.useoftools.com/finance-tools",
+        "description": "Free online finance tools to calculate GST, Income Tax, Loans, and Crypto conversions.",
+        "applicationCategory": "Finance Tools"
+    }
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9724513291347385"
+     crossorigin="anonymous"></script>
+
+    <style>
+        /* Color Palette */
+        :root {
+            --primary-color: #2f3f88;
+            /* Dark Blue */
+            --secondary-color: #2600ff;
+            /* Electric Blue */
+            --text-color: #333;
+            /* Dark Gray */
+            --light-gray: #f8f9fb;
+            /* Light Gray */
+            --white: #fff;
+            /* White */
+            --border-color: #eee;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: var(--white);
+            box-shadow: 0 2px 4px var(--shadow-color);
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            /* Ensure it stays on top */
+        }
+
+        .logo {
+            height: 40px;
+            margin-right: auto;
+            /* Push nav-right to the far right */
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-right a {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .nav-right a:hover {
+            color: var(--secondary-color);
+        }
+
+        .search-icon-link {
+            color: var(--primary-color);
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+            text-decoration: none;
+            line-height: 1;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .search-icon-link:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Main Content Area */
+        main {
+            padding: 2rem 2rem 3rem; /* Add padding around the main content */
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* Category Section */
+        .category-section {
+            margin-bottom: 3rem; /* Space between categories */
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        /* Tool Grid within Category */
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Tool Cards (Styles mostly unchanged) */
+        .tool {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 14px var(--shadow-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            min-height: 180px;
+        }
+
+        .tool:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .tool h3 { /* Changed from h2 to h3 for semantic structure */
+            width: 100%;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-top: 0; /* Remove default margin */
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tool h3 i {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            width: 20px;
+            text-align: center;
+        }
+
+        .tool p {
+            width: 100%;
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+
+        .tool a {
+            width: auto;
+            color: var(--secondary-color);
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            margin-top: auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background-color: rgba(38, 0, 255, 0.1);
+        }
+
+        .tool a i {
+            font-size: 0.8rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--white);
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem; /* Add space above footer */
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .logo {
+                margin-right: 1rem;
+            }
+
+            .nav-right {
+                justify-content: flex-end;
+                margin-top: 0;
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+
+            main {
+                padding: 1.5rem 1rem 2rem;
+            }
+
+            .category-title {
+                font-size: 1.6rem;
+            }
+
+            .tool-grid {
+                grid-template-columns: 1fr; /* Stack tools on smaller screens */
+            }
+
+            .tool {
+                min-height: 160px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .logo {
+                margin-bottom: 0.75rem;
+                margin-right: 0;
+            }
+
+            .nav-right {
+                justify-content: flex-start;
+                width: 100%;
+            }
+
+            .category-title {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <img src="https://www.useoftools.com/logo.png" alt="UseOfTools Logo" class="logo">
+        <div class="nav-right">
+            <a href="/">All Tools</a>
+            <a href="/pdf-tools">PDF Tools</a>
+            <a href="/color-tools">Color Tools</a>
+            <a href="https://www.useoftools.com/search" class="search-icon-link" aria-label="Search">
+                <i class="fas fa-search"></i>
+            </a>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- Finance Tools Section -->
+        <section class="category-section">
+            <h2 class="category-title">Finance Tools</h2>
+            <div class="tool-grid">
+                <div class="tool">
+                    <h3><i class="fas fa-calculator"></i>GST Calculator</h3>
+                    <p>Calculate GST inclusive and exclusive amounts easily. Instant results for various tax rates.</p>
+                    <a href="https://www.useoftools.com/gst-calculator">GST Calculator <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="tool">
+                    <h3><i class="fas fa-file-invoice-dollar"></i>Income Tax Calculator</h3>
+                    <p>Estimate your income tax liability based on income, deductions, and tax rate.</p>
+                    <a href="https://www.useoftools.com/income-tax-calculator">Income Tax Calculator <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="tool">
+                    <h3><i class="fas fa-hand-holding-dollar"></i>Gratuity Calculator</h3>
+                    <p>Estimate your gratuity amount based on monthly salary and years of service.</p>
+                    <a href="https://www.useoftools.com/gratuity-calculator">Gratuity Calculator <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="tool">
+                    <h3><i class="fas fa-clock"></i>Overtime Pay Calculator</h3>
+                    <p>Calculate your overtime earnings based on hourly rate, hours worked, and multiplier.</p>
+                    <a href="https://www.useoftools.com/overtime-pay-calculator">Overtime Calculator <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="tool">
+                    <h3><i class="fab fa-bitcoin"></i>Bitcoin to INR Converter</h3>
+                    <p>Instantly convert Bitcoin (BTC) to Indian Rupees (INR) based on current exchange rates.</p>
+                    <a href="https://www.useoftools.com/bitcoin-to-inr">BTC to INR <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="tool">
+                    <h3><i class="fab fa-ethereum"></i>Ethereum to INR Converter</h3>
+                    <p>Instantly convert Ethereum (ETH) to Indian Rupees (INR) based on current exchange rates.</p>
+                    <a href="https://www.useoftools.com/ethereum-to-inr">ETH to INR <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="tool">
+                    <h3><i class="fas fa-chart-line"></i>Crypto Profit/Loss Calc</h3>
+                    <p>Calculate your investment ROI, profit, or loss based on buy and sell prices.</p>
+                    <a href="https://www.useoftools.com/crypto-profit-loss-calculator">Crypto P/L Calculator <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="tool">
+                    <h3><i class="fas fa-home"></i>Home Loan Calculator</h3>
+                    <p>Calculate your monthly EMI, total interest, and total payment amount.</p>
+                    <a href="https://www.useoftools.com/home-loan-calculator">Home Loan Calculator <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+
+
+
+    </main>
+
+    <footer>
+        <p>© UseOfTools.com — <a href="https://www.useoftools.com/terms">Terms</a> | <a
+                href="https://www.useoftools.com/privacy">Privacy</a> | <a
+                href="https://www.famral.com/contact">Contact</a></p>
+    </footer>
+</body>
+
+</html>
