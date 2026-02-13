@@ -1,0 +1,490 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Overtime Pay Calculator | Free Overtime Calculation Tool</title>
+    <meta name="description" content="Free online Overtime Pay Calculator. Calculate your overtime earnings based on hourly rate, hours worked, and multiplier. Instant results!">
+    <meta name="keywords" content="overtime calculator, calculate overtime, overtime pay, time and a half, double time, salary calculator, online overtime tool">
+    <meta name="author" content="UseOfTools">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Online Overtime Pay Calculator | Free Overtime Calculation Tool">
+    <meta property="og:description" content="Free online Overtime Pay Calculator. Calculate your overtime earnings based on hourly rate, hours worked, and multiplier. Instant results!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.useoftools.com/overtime-pay-calculator">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Online Overtime Pay Calculator | Free Overtime Calculation Tool">
+    <meta name="twitter:description" content="Free online Overtime Pay Calculator. Calculate your overtime earnings based on hourly rate, hours worked, and multiplier. Instant results!">
+    <link rel="icon" type="image/x-icon" href="https://www.useoftools.com/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9724513291347385"
+     crossorigin="anonymous"></script>
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            color: #1e293b;
+        }
+        .navbar-custom {
+            background: #fff;
+            border-bottom: 1px solid #e5e7eb;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            margin-bottom: 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1.5rem;
+            height: 60px;
+        }
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2563eb;
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+        .navbar-links {
+            display: flex;
+            gap: 1.2rem;
+        }
+        .navbar-links a {
+            color: #1e293b;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            padding: 6px 14px;
+            border-radius: 6px;
+            transition: background 0.2s, color 0.2s;
+            display: block;
+        }
+        .navbar-links a:hover,
+        .navbar-links a.active {
+            background: #e0e7ff;
+            color: #2563eb;
+        }
+        .navbar-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: #2563eb;
+            cursor: pointer;
+        }
+        @media (max-width: 800px) {
+            .navbar-container {
+                padding: 0 0.7rem;
+            }
+            .navbar-links {
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background: #fff;
+                flex-direction: column;
+                gap: 0;
+                min-width: 170px;
+                box-shadow: 0 4px 24px rgba(37,99,235,0.08);
+                border-radius: 0 0 10px 10px;
+                border: 1px solid #e5e7eb;
+                z-index: 2000;
+                padding: 0.5rem 0;
+                display: none;
+            }
+            .navbar-links.show {
+                display: flex;
+            }
+            .navbar-links a {
+                padding: 0.9rem 1.5rem;
+                border-radius: 0;
+                font-size: 1.08rem;
+                color: #1e293b;
+                background: none;
+                border-bottom: 1px solid #f1f5f9;
+                margin: 0;
+            }
+            .navbar-links a:last-child {
+                border-bottom: none;
+            }
+            .navbar-toggle {
+                display: block;
+            }
+        }
+        .container {
+            max-width: 600px;
+            margin: 2.5rem auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 6px 32px rgba(37,99,235,0.10);
+            padding: 2.2rem 1.7rem 2.7rem 1.7rem;
+        }
+        h1 {
+            text-align: center;
+            color: #2563eb;
+            margin-bottom: 1.2rem;
+            font-size: 2rem;
+        }
+        .desc {
+            text-align: center;
+            color: #334155;
+            margin-bottom: 2rem;
+            font-size: 1.08rem;
+        }
+        .encode-section {
+            margin-bottom: 2rem;
+        }
+        .encode-input {
+            width: 100%;
+            font-size: 1.08rem;
+            border-radius: 10px;
+            border: 1.5px solid #c7d2fe;
+            padding: 1rem;
+            margin-bottom: 1.2rem;
+            background: #f8fafc;
+            color: #1e293b;
+            box-sizing: border-box;
+        }
+        .btn-encode {
+            display: inline-block;
+            padding: 0.7rem 2.2rem;
+            background: linear-gradient(90deg,#2563eb 60%,#60a5fa 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+            transition: background 0.2s, box-shadow 0.2s;
+            margin-bottom: 1.2rem;
+        }
+        .btn-secondary {
+            background: linear-gradient(90deg,#64748b 60%,#94a3b8 100%);
+        }
+        .btn-secondary:hover {
+            background: linear-gradient(90deg,#475569 60%,#94a3b8 100%);
+        }
+        .btn-encode:hover {
+            background: linear-gradient(90deg,#1e40af 60%,#60a5fa 100%);
+            box-shadow: 0 4px 16px rgba(37,99,235,0.13);
+        }
+        .encode-output-block {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+        .gst-result-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        .gst-result-table th, .gst-result-table td {
+            padding: 0.8rem;
+            border-bottom: 1px solid #e5e7eb;
+            text-align: left;
+        }
+        .gst-result-table th {
+            color: #64748b;
+            font-weight: 600;
+        }
+        .gst-result-table td {
+            color: #1e293b;
+            font-weight: 700;
+            text-align: right;
+        }
+        .input-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #475569;
+            font-weight: 600;
+        }
+        .copy-btn {
+            margin-left: 10px;
+            background: linear-gradient(90deg,#2563eb 60%,#60a5fa 100%);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 0.45rem 1.1rem;
+            font-size: 1.02rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+            transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+            outline: none;
+            border: 2px solid transparent;
+        }
+        .copy-btn:focus {
+            border: 2px solid #2563eb;
+        }
+        .copy-btn:hover {
+            background: linear-gradient(90deg,#1e40af 60%,#60a5fa 100%);
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(37,99,235,0.13);
+        }
+        .popular-tools-section {
+            max-width: 650px;
+            margin: 2.5rem auto 1.5rem auto;
+            background: #f8fafc;
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(37,99,235,0.06);
+            padding: 2rem 1.5rem 1.5rem 1.5rem;
+        }
+        .popular-tools-section h2 {
+            color: #2563eb;
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+            text-align: center;
+            letter-spacing: -1px;
+        }
+        .popular-tools-list.horizontal-tools {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 1.2rem;
+            justify-content: center;
+            align-items: stretch;
+        }
+        .popular-tools-list.horizontal-tools .tool-card {
+            flex: 1 1 0;
+            min-width: 0;
+            max-width: 200px;
+        }
+        .tool-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+            padding: 1.1rem 1.4rem;
+            text-decoration: none;
+            color: #1e293b;
+            font-weight: 500;
+            font-size: 1.07rem;
+            min-width: 0px;
+            max-width: 200px;
+            transition: box-shadow 0.2s, transform 0.2s, color 0.2s;
+        }
+        .tool-card i {
+            font-size: 2rem;
+            color: #2563eb;
+            margin-bottom: 0.6rem;
+        }
+        .tool-card:hover {
+            box-shadow: 0 6px 24px rgba(68, 94, 239, 0.13);
+            color: #2563eb;
+            transform: translateY(-3px) scale(1.04);
+        }
+        @media (max-width: 900px) {
+            .popular-tools-list.horizontal-tools .tool-card {
+                max-width: 160px;
+                font-size: 0.98rem;
+                padding: 1rem 0.5rem;
+            }
+        }
+        @media (max-width: 700px) {
+            .popular-tools-list.horizontal-tools {
+                flex-wrap: wrap;
+            }
+            .popular-tools-list.horizontal-tools .tool-card {
+                flex: 1 1 45%;
+                max-width: 100%;
+                min-width: 120px;
+            }
+        }
+        @media (max-width: 480px) {
+            .popular-tools-list.horizontal-tools {
+                flex-direction: column;
+                gap: 0.7rem;
+            }
+            .popular-tools-list.horizontal-tools .tool-card {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        .faq-section {
+            max-width: 650px;
+            margin: 2.5rem auto 1.5rem auto;
+            background: #f8fafc;
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(37,99,235,0.06);
+            padding: 2rem 1.5rem 1.5rem 1.5rem;
+        }
+        .faq-section h2 {
+            color: #2563eb;
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            text-align: center;
+        }
+        .faq-item {
+            margin-bottom: 1.3rem;
+        }
+        .faq-item h3 {
+            font-size: 1.08rem;
+            color: #1e293b;
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .faq-item p {
+            color: #334155;
+            margin: 0 0 0.2rem 0;
+            font-size: 0.99rem;
+        }
+        .faq-item code {
+            background: #e0e7ff;
+            color: #2563eb;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+        @media (max-width: 700px) {
+            .popular-tools-section,
+            .faq-section {
+                padding: 1.2rem 0.5rem 1rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar-custom">
+        <div class="navbar-container">
+            <a href="https://www.useoftools.com/overtime-pay-calculator" class="navbar-logo">
+                Overtime Calculator
+            </a>
+            <button class="navbar-toggle" aria-label="Open menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="navbar-links">
+                <a href="https://www.useoftools.com/">All Tools</a>
+                <a href="https://www.useoftools.com/image-tools">Image Tools</a>
+                <a href="https://www.useoftools.com/pdf-tools">PDF Tools</a>
+                <a href="https://www.useoftools.com/seo-tools">SEO Tools</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1><i class="fas fa-clock"></i> Overtime Pay Calculator</h1>
+        <div class="desc">
+            Calculate your overtime earnings. Enter your regular hourly rate, overtime hours worked, and the multiplier (e.g., 1.5).
+        </div>
+        <div class="encode-section">
+            <label class="input-label">Regular Hourly Pay</label>
+            <input type="number" id="hourlyRateInput" class="encode-input" placeholder="Enter Hourly Rate" step="0.01">
+            
+            <label class="input-label">Overtime Hours Worked</label>
+            <input type="number" id="overtimeHoursInput" class="encode-input" placeholder="Enter Overtime Hours" step="0.5">
+
+            <label class="input-label">Overtime Multiplier (e.g. 1.5)</label>
+            <input type="number" id="multiplierInput" class="encode-input" placeholder="Enter Multiplier (Default 1.5)" value="1.5" step="0.1">
+            
+            <div style="text-align: center; margin-top: 1rem;">
+                <button class="btn-encode" id="calculateBtn"><i class="fas fa-calculator"></i> Calculate Pay</button>
+            </div>
+            <div id="resultBlock" class="encode-output-block" style="display:none;"></div>
+        </div>
+    </div>
+    <!-- Popular Tools Section -->
+    <section class="popular-tools-section">
+        <h2><i class="fas fa-fire"></i> Popular Tools</h2>
+        <div class="popular-tools-list horizontal-tools">
+            <a class="tool-card" href="https://www.useoftools.com/url-decoder">
+                <i class="fas fa-unlock"></i>
+                <span>URL Decoder</span>
+            </a>
+            <a class="tool-card" href="https://www.useoftools.com/merge-pdf">
+                <i class="fas fa-file-pdf"></i>
+                <span>Merge PDF</span>
+            </a>
+            <a class="tool-card" href="https://www.useoftools.com/svg-editor">
+                <i class="fas fa-vector-square"></i>
+                <span>SVG Editor</span>
+            </a>
+            <a class="tool-card" href="https://www.useoftools.com/qr-code-generator">
+                <i class="fas fa-qrcode"></i>
+                <span>QR Code</span>
+            </a>
+        </div>
+    </section>
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3><i class="fas fa-clock"></i> What is Overtime Pay?</h3>
+            <p>Overtime pay is the additional compensation employees receive for working hours beyond their standard workweek, often paid at a higher rate.</p>
+        </div>
+        <div class="faq-item">
+            <h3><i class="fas fa-magic"></i> How do I use this tool?</h3>
+            <p>Enter your regular hourly wage, the number of overtime hours worked, and the overtime rate multiplier (usually 1.5). Click calculate to see your earnings.</p>
+        </div>
+        <div class="faq-item">
+            <h3><i class="fas fa-calculator"></i> How is Overtime calculated?</h3>
+            <p>The formula is: <code>Hourly Rate × Overtime Hours × Multiplier</code>. For example, $20/hr × 10 hours × 1.5 = $300.</p>
+        </div>
+        <div class="faq-item">
+            <h3><i class="fas fa-coins"></i> What is "Time and a Half"?</h3>
+            <p>"Time and a half" refers to an overtime rate that is 1.5 times the employee's regular hourly wage.</p>
+        </div>
+        <div class="faq-item">
+            <h3><i class="fas fa-file-invoice-dollar"></i> Is Overtime Taxable?</h3>
+            <p>Yes, overtime pay is generally considered part of your gross income and is subject to income tax and other deductions.</p>
+        </div>
+    </section>
+    <script>
+        // Navbar mobile toggle
+        const navbarToggle = document.querySelector('.navbar-toggle');
+        const navbarLinks = document.querySelector('.navbar-links');
+        navbarToggle.addEventListener('click', function () {
+            navbarLinks.classList.toggle('show');
+        });
+        document.addEventListener('click', function (e) {
+            if (!navbarToggle.contains(e.target) && !navbarLinks.contains(e.target)) {
+                navbarLinks.classList.remove('show');
+            }
+        });
+
+        // Overtime Calculator logic
+        const hourlyRateInput = document.getElementById('hourlyRateInput');
+        const overtimeHoursInput = document.getElementById('overtimeHoursInput');
+        const multiplierInput = document.getElementById('multiplierInput');
+        const calculateBtn = document.getElementById('calculateBtn');
+        const resultBlock = document.getElementById('resultBlock');
+
+        function formatCurrency(num) {
+            return num.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        calculateBtn.addEventListener('click', function () {
+            const rate = parseFloat(hourlyRateInput.value) || 0;
+            const hours = parseFloat(overtimeHoursInput.value) || 0;
+            const multiplier = parseFloat(multiplierInput.value) || 0;
+            
+            const totalOvertimePay = rate * hours * multiplier;
+
+            resultBlock.style.display = 'block';
+            resultBlock.innerHTML = `
+                <table class="gst-result-table">
+                    <tr><th>Hourly Rate</th><td>${formatCurrency(rate)}</td></tr>
+                    <tr><th>Overtime Hours</th><td>${hours}</td></tr>
+                    <tr><th>Multiplier</th><td>${multiplier}x</td></tr>
+                    <tr><th>Total Overtime Pay</th><td>${formatCurrency(totalOvertimePay)}</td></tr>
+                </table>
+            `;
+        });
+    </script>
+</body>
+</html>
