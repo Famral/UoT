@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photex</title>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9724513291347385"
+     crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f9;
+      color: #333;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #333;
+      padding: 10px 20px;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffd700;
+    }
+
+    header {
+      text-align: center;
+      background: #444;
+      color: white;
+      padding: 15px 0;
+    }
+
+    /* Gallery styling */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 180px; /* fixed height for uniform layout */
+      object-fit: cover; /* crops and centers image nicely */
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Lightbox overlay */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    /* Bottom Button Styling */
+    .bottom-button-container {
+      text-align: center;
+      margin: 30px 0;
+      padding-bottom: 20px;
+    }
+
+    .btn-link {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .btn-link:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Photex</div>
+    <ul>
+      <li><a href="/photo-editor">Photo Editor</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>Aditi</h1>
+  </header>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9724513291347385"
+     crossorigin="anonymous"></script>
+<!-- UOTPhotexRespnsvAd -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9724513291347385"
+     data-ad-slot="8787692360"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  <!-- Gallery -->
+  <div class="gallery" id="gallery"></div>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9724513291347385"
+     crossorigin="anonymous"></script>
+<!-- UOTPhotexRespnsvAd -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9724513291347385"
+     data-ad-slot="8787692360"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <script>
+    // Image list
+    const images = [
+      "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi06H08nKPACegQRP5K9dQRo45q-cLSQrRipolxCFt0PHfa8nChUYavWU4UrajYtWKMjW8w0LQgFdTjOHZal-0-4-EDTFkEA90mO_pOK5JPaq_v60HsgxEoRXlthFgpqcKAE2VA8dr1dGKmWqAa8PPsSVWkwin4D-_M84OoZpe6waEbGyVgpBVXJnTEH2Ov/s1001/cropped-image%20(4).png",
+      "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiJkMeJuxiQZ2rn4_GGik8D3EtLychN4HIig439yJ9ta1bKjHcfKGACQPB7PxTOGf1y3SMkrxZO3798lTC8YzIUxZaqrHYMBmjVN-KieUNEzTbS9M43hdUE1sX_KhrAxdCiuCoeY6gL9Dku9XIrSF3Vy7UBPYjYpFsds5DosYGNpzesqUeCPn6W-ljt7N9u/s1269/cropped-image%20(1).png",
+      "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjrxGMpoy-m_4dfs25HwfvvibksXh-5MpUp_eh31SY2mxlKiu6aEDYJkReXgThzDv-wGBy6gO0gJZY2_vSEAdWRAnGeDP-6eLgabqA97VHrmAzhhZUNzW7WUu5UdYchdyVQxjj3o0hfKSB7iw8L5d5JId8UA-hMGWe8BhSHgd2WB7eT5jltZ07fhm2qLnw9/s1059/cropped-image%20(2).png",
+      "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMqqL8U_-y_4P77e5l2cbhT4Luz-B_lTK1BTbfyf5l7KCoacJA5oSyS6hqrOAE8oeLTqZJ_u2MqzbLiHzkFDlmQqVEpZEyueQ070Zez0kqjaP_2IaUH1u1hxkahszqU1HFyDEecSv7OyBx3oA6mTwZ8CKkBjgha0bk9bZK8G7VU_1GXETMYxXuMw4u9HIG/s1001/cropped-image%20(3).png",
+      "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgvFFLzl6b9Ou7KNMtHnRI0uki6osaKx2SL54T6Yx37d6sZsXr2tEVa4ZUr9DmPjd7kn4-ARw39aqwAR30viO6Eeul9DmLJiSp2Uwucf7gHx8Hc5AfDu6gJmxwVwTC9T_26cSxCYO3AEA4H2qfJsG-0kZ7OOnf3jyri4pYnrQAD7iNEmeY8BHhrKs2uq-gD/s1256/cropped-image.png",
+      "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDRG0S-wa9c7t5BpYxPubI-UuS7eC-N6Amf1TPlKLGYkfxuh6EL1hUEI6ZeHx0srqCDjfBVuButlFr3tXoMoGB-6NvE_EFpdcMr145QdwtQD9h7c41mem2NrqexDH0rV08in9jKFLO3K7COZr9IjilYOXwsv-SBq04oTlR_ddWxuTWAkmFCWzS3EPwFR0K/s1002/75969813_001_fe75.jpg",
+      "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYfOItrufJCRQPosXcrPPgWlXbWbPARZBDz7dnKKmHhUKf02gcngx7XrRRhTGkE8pRpdf6ioMpxEYEOptzTPZKLpZDbrXEwjk_oYZDYliGEQDy3op6lQoRPAibnZqdbVndYTMMWlqk2IZ-MTTGUniOOc_AN8AUC-7B1TYNlzumwWb5uH8V67ymuQR-WqFA/s1088/77681786_023_865c.jpg",
+      "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj8uBbU0y5HL-3ZDif1cdI7LEZTMdTlBsoc75dac7aSmBgfNqICjMAgkEMwKxZFgsD2FSwcfutyOwiHegw5Z-LTSFj9ZPXJgvExL0Yrj26ex0BCjvqB4cwSf7vS7jFZ4T7Sx0FP-mspT8VRfX1L3KWb3QqAmMnAjSZNEOB7vSLT1zMV9UJ_qEe3r7nHuOXL/s1255/30103291_003_173d.jpg",
+      "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgoSn5UZ_ohuineEh2n1R7qaBshHSbJZXDCvGV7JwqQ4jx4hlAmme2GdXsZtEacDCwHCmNZXKGai0cYnQmke2cToD1J7jqdkAB73ovBOfZPc8lsTbwIBsGUJvx-HX5Rk-I1y2LK_D4h74u1Ef2cqLTCk9oRiKACYGjXqPeEWzl1SnH7RSKRMlGisOSuOUxg/s1249/21095012_001_b5e1.jpg",
+      "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgM1wPe8qkZ1Z1iYXPR696A-e8iwbavdpYNfrEllbzoTRJuXaH_Ojen3Q1sa7WJ-mguWuLL1c8ERUf9aE1_EJrZ8uNZjuLAWAK1paxhqkz1_KhfGpzm_9evPxBOwDPA4JNTAd8Bm5VAc9slN5HwAuVA4mz0YjET8Om0PGDXTQka0kK70L-8rJrz9G8ZSC9X/s1256/68719046_003_551e.jpg"
+
+    ];
+
+    const gallery = document.getElementById("gallery");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+
+    // Load images
+    images.forEach(src => {
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = "Gallery Image";
+      img.addEventListener("click", () => {
+        lightboxImg.src = src;
+        lightbox.style.display = "flex";
+      });
+      gallery.appendChild(img);
+    });
+
+    // Close lightbox
+    lightbox.addEventListener("click", () => {
+      lightbox.style.display = "none";
+    });
+  </script>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9724513291347385"
+     crossorigin="anonymous"></script>
+<!-- UOTPhotexRespnsvAd -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9724513291347385"
+     data-ad-slot="8787692360"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+  <div class="bottom-button-container">
+    <a href="https://www.useoftools.com/photo" class="btn-link">New Photos</a>
+  </div>
+  
+</body>
+</html>
